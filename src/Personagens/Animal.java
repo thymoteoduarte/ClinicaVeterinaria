@@ -37,9 +37,7 @@ public class Animal {
         this.raca = raca;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
+    public void setIdade(int idade) { this.idade = idade; }
 
     public void setHistorico(String historico){
         this.historico.add(LocalDate.now());
@@ -55,9 +53,7 @@ public class Animal {
         return sexo;
     }
 
-    public String getEspecie() {
-        return Especie;
-    }
+    public String getEspecie() { return Especie; }
 
     public String getRaca() {
         return raca;

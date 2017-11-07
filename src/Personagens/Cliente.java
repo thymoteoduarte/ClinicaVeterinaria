@@ -18,7 +18,7 @@ public class Cliente extends Pessoa {
                                                             //Implementação do metodo cadastrar.
     @Override
     public void cadastrar(Repositorios repositorio) {
-        if()
+        if(!repositorio.contem(this))
             repositorio.add(this);
     }
 
