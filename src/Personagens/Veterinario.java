@@ -12,11 +12,6 @@ public class Veterinario extends Funcionario {
 		super(nome, sexo, telefone, dataNascimento, endereco, login, senha);
 	}
 
-	@Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
     @Override
     public String toString() {
         return super.toString();
@@ -27,13 +22,8 @@ public class Veterinario extends Funcionario {
 
     }
 
-    @Override
-    public void FazerLogin() {
-
-    }
-
 	@Override
-	public void exibirMenu() {
+	public void exibirMenu(Funcionario funcionario) {
 		// TODO Auto-generated method stub
 		
 	}

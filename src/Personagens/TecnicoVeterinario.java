@@ -17,11 +17,6 @@ public class TecnicoVeterinario extends Funcionario{
     }
 
     @Override
-    public void FazerLogin() {
-
-    }
-
-    @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
@@ -32,7 +27,7 @@ public class TecnicoVeterinario extends Funcionario{
     }
 
 	@Override
-	public void exibirMenu() {
+	public void exibirMenu(Funcionario funcionario) {
 		
 	}
 }
