@@ -7,18 +7,22 @@ import java.util.ArrayList;
 
 
 public class Recepcionista extends Funcionario{
-    String login, senha;
+   
+	
+    public Recepcionista(String nome, String sexo, String telefone, LocalDate dataNascimento, Endereco endereco, String login, String senha) {
+		super(nome, sexo, telefone, dataNascimento, endereco, login, senha);
+	}
 
-    public Recepcionista(String nome, int idade, String sexo, String telefone, LocalDate dataNascimento, Endereco endereco) {
-        super(nome, idade, sexo, telefone, dataNascimento, endereco, login, senha);
-    }
-
-
-                                                    //Metodos Herdados:
+	//Metodos Herdados:
     @Override
     public void FazerLogin() {
         //inicialização do sistema para um Recepcionista
     }
+    
+    @Override
+	public void exibirMenu() {
+		// TODO Auto-generated method stub
+	}
 
     @Override
     public void cadastrar(Repositorios repositorio) {
