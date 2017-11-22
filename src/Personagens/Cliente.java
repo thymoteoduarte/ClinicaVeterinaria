@@ -8,18 +8,18 @@ public class Cliente extends Pessoa {
     private ArrayList<Animal> ListaAnimais;
 
 
-                                                            //Construtor de Cliente
+                                                                                                            //Construtor de Cliente:
     public Cliente(String nome, int idade, String sexo, String fone, LocalDate data,  Endereco end){
         super(nome, sexo, fone, data, end);
         ListaAnimais = new ArrayList<>();
     }
 
 
-                                                            //Implementação do metodo cadastrar.
+                                                                                                        //Implementação do metodo cadastrar:
     @Override
     public void cadastrar(Repositorios repositorio) {
-        if(!repositorio.contem(this))
-            repositorio.add(this);
+        if(!repositorio.contemCliente(this))
+            repositorio.addCliente(this);
     }
 
 

@@ -4,25 +4,22 @@ import Repositorios.Repositorios;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Recepcionista extends Funcionario{
-   
-	
     public Recepcionista(String nome, String sexo, String telefone, LocalDate dataNascimento, Endereco endereco, String login, String senha) {
 		super(nome, sexo, telefone, dataNascimento, endereco, login, senha);
 	}
 
-	//Metodos Herdados:
+	                                                                                                            //Metodos Herdados:
     
     @Override
 	public void exibirMenu(Funcionario funcionario) {
-    	//Implementar com a interface gr�fica.
-	}
+        //implementação será feita com a interface gráfica.
+    }
 
     @Override
     public void cadastrar(Repositorios repositorio) {
-        //incluir o recepcionista no repositório de recepcionistas
+        repositorio.addRecepcionista(this);
     }
     
     
@@ -32,15 +29,15 @@ public class Recepcionista extends Funcionario{
     /**
      * Recebe os dados de um novo cliente, e o coloca no repositório de clientes
      */
-    public void cadastrarCliente(){
-    	//implementar com a interface gr�fica.
+    public void cadastrarCliente(Cliente cliente){
+        cliente.cadastrar();
     }
 
     /**
      * Cadastra um animal de um cliente, e o coloca no repositório de Animais
      */
     public void cadastrarAnimal(){
-    	//Implementar com a interface gr�fica.
+    	//Implementar com a interface gr�fica.
     }
 
     /**
@@ -49,7 +46,7 @@ public class Recepcionista extends Funcionario{
      * @param paciente
      */
     public void marcarConsulta(Veterinario veterinario, Animal paciente){
-    	//Implementar com a interface gr�fica.
+    	//Implementar com a interface gr�fica.
     }
 
     /**
@@ -58,28 +55,28 @@ public class Recepcionista extends Funcionario{
      * @param animal
      */
     public void desmarcarConsulta(Veterinario funcionario, Animal animal){
-    	//implementar com a interface gr�fica
+    	//implementar com a interface gr�fica
     }
 
     /**
      * Reserva uma vaga para o hotelzinho.
      */
     public void reservarVaga(){
-    	//Implementar com a interface gr�fica
+    	//Implementar com a interface gr�fica
     }
 
     /**
      * Deixa livre uma vaga do hotelzinho.
      */
     public void cancelarVaga(){
-    	//Implementar com a interface gr�fica.
+    	//Implementar com a interface gr�fica.
     }
 
     /**
      * Marca um horário para a vacina de um animal.
      */
     public void masrcarVacina(){
-    	//Implementar com a interface gr�fica.
+    	//Implementar com a interface gr�fica.
     }
 
 
@@ -87,7 +84,7 @@ public class Recepcionista extends Funcionario{
      * Cancela a marcação de uma vacinação de um animal
      */
     public void desmarcarVacina(){
-    	//Implementar com a interface gr�fica.
+    	//Implementar com a interface gr�fica.
     }
 
 

@@ -8,7 +8,7 @@ public abstract class Pessoa {
     private String nome, sexo, telefone;
     private LocalDate dataNascimento;
     private Endereco endereco;
-    private int idade;
+    private static Repositorios repositorio;
 
     //Construtor
     public Pessoa(String nome, String sexo, String telefone, LocalDate dataNascimento, Endereco endereco) {
@@ -17,16 +17,11 @@ public abstract class Pessoa {
         this.telefone = telefone;
         this.dataNascimento = dataNascimento;
         this.endereco = endereco;
-        if (dataNascimento.getMonthValue() < LocalDate.now().getMonthValue() || (LocalDate.now().getMonthValue() == dataNascimento.getMonthValue() && dataNascimento.getDayOfMonth() <= LocalDate.now().getDayOfMonth()))
-            this.idade = LocalDate.now().getYear() - dataNascimento.getYear();
-        else
-            this.idade = LocalDate.now().getYear() - dataNascimento.getYear() - 1;
-
     }
 
-                                                                                //Metodo abstratos:
 
-    public abstract void cadastrar(Repositorios repositorio); 
+
+    public abstract void cadastrar(Repositorios repositorio);
 
                                                                                 //getters e setters:
     /**
@@ -37,19 +32,12 @@ public abstract class Pessoa {
     }
 
     /**
-     * @return Um int que significa a idade da pessoa.
+     * @return O endereco da Pessoa.
      */
-    public int getIdade() {
-    	if (this.dataNascimento.getMonthValue() < LocalDate.now().getMonthValue() || 
-    			(LocalDate.now().getMonthValue() == this.dataNascimento.getMonthValue() && 
-    			this.dataNascimento.getDayOfMonth() <= LocalDate.now().getDayOfMonth())) {
-            this.idade = LocalDate.now().getYear() - this.dataNascimento.getYear();
-    	} else {
-            this.idade = LocalDate.now().getYear() - this.dataNascimento.getYear() - 1;
-    	}
-    	
-        return this.idade;
+    public Endereco getEndereco() {
+        return endereco;
     }
+
 
     /**
      * @return Uma String que significa o sexo da Pessoa.
@@ -104,6 +92,9 @@ public abstract class Pessoa {
         this.dataNascimento = dataNascimento;
     }
 
+
+
+                                                                                                            //Sobreescrita de metodos:
     /**
      * Compara duas Pessoas.
      * @return true se as pessoas tiverem os mesmos nomes, dataNascimento e Sexo. 

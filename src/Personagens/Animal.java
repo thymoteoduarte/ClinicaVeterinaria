@@ -7,7 +7,7 @@ public class Animal {
     private String nome, sexo, Especie, raca;
     private Cliente cliente;
     private int idade;
-    private ArrayList historico;        //O tipo de dado do arrayList não foi especificado, por que será guardado uma Date (data da consulta) e uma String (observações feitas pelo veterinario)
+    private ArrayList<Consulta> historico;
 
     //Construtor de Animal
     public Animal(String nome, String sexo, String tipo, String raca, Cliente cliente, int idade) {
@@ -20,7 +20,7 @@ public class Animal {
         this.historico = new ArrayList();
     }
 
-    //getters e setters
+                                                                                                                //getters e setters
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -39,9 +39,8 @@ public class Animal {
 
     public void setIdade(int idade) { this.idade = idade; }
 
-    public void setHistorico(String historico){
-        this.historico.add(LocalDate.now());
-        this.historico.add(historico);
+    public void setHistorico(Consulta consulta){
+        this.historico.add(consulta);
     }
 
 
@@ -71,3 +70,5 @@ public class Animal {
         return historico;
     }
 }
+
+

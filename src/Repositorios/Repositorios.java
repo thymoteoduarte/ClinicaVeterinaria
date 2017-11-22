@@ -24,45 +24,45 @@ public class Repositorios {
     }
 
                                                     //Metodos que adicionam personagens em seus repositórios:
-    public void add(Animal animal){
+    public void addAnimal(Animal animal){
          rAnimais.add(animal);
     }
 
-    public void add(Cliente cliente){
+    public void addCliente(Cliente cliente){
         rClientes.add(cliente);
     }
 
-    public void add(Veterinario veterinario){
+    public void addVeterinario(Veterinario veterinario){
         rVeterinarios.add(veterinario);
     }
 
-    public void add(TecnicoVeterinario tec){
+    public void addTecnico(TecnicoVeterinario tec){
         rTecnicos.add(tec);
     }
 
-    public void add(Recepcionista recepcionista){
+    public void addRecepcionista(Recepcionista recepcionista){
         rRecepcionistas.add(recepcionista);
     }
 
                                                     //Metodos que removem personagens de seus repositórios:
 
-    public void remove(Animal animal){
+    public void removeAnimal(Animal animal){
         rAnimais.remove(animal);
     }
 
-    public void remove(Cliente cliente){
+    public void removeCliente(Cliente cliente){
         rClientes.remove(cliente);
     }
 
-    public void remove(Veterinario veterinario){
+    public void removeVeterinario(Veterinario veterinario){
         rVeterinarios.remove(veterinario);
     }
 
-    public void remove(TecnicoVeterinario tec){
+    public void removeTecnico(TecnicoVeterinario tec){
         rTecnicos.remove(tec);
     }
 
-    public void remove(Recepcionista recepcionista){
+    public void removeRecepcionista(Recepcionista recepcionista){
         rRecepcionistas.remove(recepcionista);
     }
 
@@ -70,29 +70,23 @@ public class Repositorios {
 
                                                     //Metodos que verificam se um personagem está cadastrado:
 
-    public boolean contem(Animal animal){
+    public boolean contemAnimal(Animal animal){
         return this.rAnimais.contains(animal);
     }
 
-    public boolean contem(Cliente cliente){
+    public boolean contemCliente(Cliente cliente){
         return this.rClientes.contains(cliente);
     }
 
-    public boolean contem(Veterinario veterinario){
+    public boolean contemVeterinario(Veterinario veterinario){
         return this.rVeterinarios.contains(veterinario);
     }
 
-    public boolean contem(TecnicoVeterinario tec){
+    public boolean contemTecnico(TecnicoVeterinario tec){
         return this.rTecnicos.contains(tec);
     }
 
-    public boolean contem(Recepcionista recepcionista){
+    public boolean contemRecepcionista(Recepcionista recepcionista){
         return this.rRecepcionistas.contains(recepcionista);
     }
-
-
-                                                    //Metodos que retornam o repositório de um tipo de personagem:
-
-
-
 }

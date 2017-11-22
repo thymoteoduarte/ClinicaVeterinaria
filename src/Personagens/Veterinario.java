@@ -12,6 +12,12 @@ public class Veterinario extends Funcionario {
 		super(nome, sexo, telefone, dataNascimento, endereco, login, senha);
 	}
 
+
+	public void setObs(Consulta consulta, String observacao){
+        consulta.setHistorico(observacao);
+    }
+
+
     @Override
     public String toString() {
         return super.toString();
