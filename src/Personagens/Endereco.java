@@ -71,8 +71,16 @@ public class Endereco {
         return estado;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Endereco){
+            Endereco novo = (Endereco) obj;
+            if(this.getCep().equals(novo.getCep()) && this.getNumero().equals(novo.getNumero()))
+                return true;
+        }
+        return false;
+    }
 
-    //toString
     @Override
     public String toString(){
         return this.tipo + " " + this.nome + ", nº " + this.numero + ", " + this.bairro + ", CEP: " + this.cep + ", " + this.cidade + " " + this.estado;

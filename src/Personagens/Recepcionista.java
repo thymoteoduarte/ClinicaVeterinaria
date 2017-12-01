@@ -1,43 +1,38 @@
 package Personagens;
 
-import Repositorios.Repositorios;
+import Repositorios.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Recepcionista extends Funcionario{
-    public Recepcionista(String nome, String sexo, String telefone, LocalDate dataNascimento, Endereco endereco, String login, String senha) {
-		super(nome, sexo, telefone, dataNascimento, endereco, login, senha);
-	}
 
-	                                                                                                            //Metodos Herdados:
-    
+                                                                                                            //Construtor de Recepcionista
+
+    public Recepcionista(String nome, String sexo, String telefone, LocalDate dataNascimento, Endereco endereco, String login, String senha) {
+        super(nome, sexo, telefone, dataNascimento, endereco, login, senha);
+    }
+
+                                                                                                                //Metodos Herdados:
+
     @Override
-	public void exibirMenu(Funcionario funcionario) {
+    public void exibirMenu(Funcionario funcionario) {
         //implementação será feita com a interface gráfica.
     }
 
     @Override
     public void cadastrar(Repositorios repositorio) {
-        repositorio.addRecepcionista(this);
-    }
-    
-    
-                                                    //Metodos de Funcionário:
-
-
-    /**
-     * Recebe os dados de um novo cliente, e o coloca no repositório de clientes
-     */
-    public void cadastrarCliente(Cliente cliente){
-        cliente.cadastrar();
+        repositorio.add(this);
     }
 
+
+                                                                                                            //Metodos de Recepcionista:
+
     /**
-     * Cadastra um animal de um cliente, e o coloca no repositório de Animais
+     * Recebe um objeto do tipo Animal, e o coloca no repositório de Animais
      */
-    public void cadastrarAnimal(){
-    	//Implementar com a interface gr�fica.
+    public void cadastrarAnimal(Animal animal, Repositorios repositorio){
+        repositorio.add(animal);
     }
 
     /**
@@ -45,8 +40,14 @@ public class Recepcionista extends Funcionario{
      * @param veterinario
      * @param paciente
      */
-    public void marcarConsulta(Veterinario veterinario, Animal paciente){
-    	//Implementar com a interface gr�fica.
+    public boolean marcarConsulta(Veterinario veterinario, Animal paciente, LocalDate data){
+        if (veterinario.existeVaga(data)){
+            Consulta c = new Consulta(veterinario, paciente, data);
+            veterinario.preencherVaga(c);
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -54,79 +55,45 @@ public class Recepcionista extends Funcionario{
      * @param funcionario
      * @param animal
      */
-    public void desmarcarConsulta(Veterinario funcionario, Animal animal){
-    	//implementar com a interface gr�fica
+    public boolean desmarcarConsulta(Veterinario funcionario, Animal animal, LocalDate data){
+        Consulta consulta = new Consulta(funcionario, animal, data);
+
+        if (funcionario.getConsultasMarcadas().contains(consulta)){
+            funcionario.desmarcar(consulta);
+            return true;
+        }
+        return false;
     }
 
     /**
      * Reserva uma vaga para o hotelzinho.
      */
-    public void reservarVaga(){
-    	//Implementar com a interface gr�fica
+    public boolean reservarVaga(Animal animal, LocalDate data, Hotelzinho hotelzinho){
+        return hotelzinho.reservar(animal, data);
     }
 
     /**
      * Deixa livre uma vaga do hotelzinho.
      */
-    public void cancelarVaga(){
-    	//Implementar com a interface gr�fica.
+    public boolean cancelarVaga(Animal animal, LocalDate data, Hotelzinho hotelzinho){
+        Vaga vaga = new Vaga(data);
+        vaga.preencherVaga(animal);
+        return hotelzinho.desoculparVaga(vaga);
     }
 
     /**
      * Marca um horário para a vacina de um animal.
      */
-    public void masrcarVacina(){
-    	//Implementar com a interface gr�fica.
+    public void masrcarVacina(Animal animal, LocalDate data){
+        //Implementar.
     }
 
 
     /**
      * Cancela a marcação de uma vacinação de um animal
      */
-    public void desmarcarVacina(){
-    	//Implementar com a interface gr�fica.
+    public void desmarcarVacina(Animal animal, LocalDate data){
+        //Implementar.
     }
 
-
-
-                                                                    //implementar a consulta de horários:
-    /**
-     * Retorna um ArrayList contendo os horários dos Veterinários.
-     * @return
-     */
-    public ArrayList consultarHorariosVet(){
-        return new ArrayList();
-    }
-
-    /**
-     * Retorna um ArrayList contendo os horários de um Veterinários específico.
-     * @return
-     */
-    public ArrayList consultarHorariosVet(Veterinario vet){
-        return new ArrayList();
-    }
-
-    /**
-     * Retorna um ArrayList contendo os horários dos Tecnicos Veterinários.
-     * @return
-     */
-    public ArrayList consultarHorariosTecVet(){
-        return new ArrayList();
-    }
-
-    /**
-     * Retorna um ArrayList contendo os horários de um Tecnico Veterinário específico.
-     * @return
-     */
-    public ArrayList consultarHorariosTecVet(TecnicoVeterinario tec){
-        return new ArrayList();
-    }
-
-    /**
-     * Retorna um ArrayList contendo os horários do Hotelzinho.
-     * @return
-     */
-    public ArrayList consultarHorariosHotel(){
-        return new ArrayList();
-    }
 }

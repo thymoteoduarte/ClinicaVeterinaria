@@ -5,22 +5,22 @@ import java.util.ArrayList;
 
 public class Animal {
     private String nome, sexo, Especie, raca;
-    private Cliente cliente;
-    private int idade;
+    private Cliente dono;
+    private LocalDate dataNascimento;
     private ArrayList<Consulta> historico;
 
     //Construtor de Animal
-    public Animal(String nome, String sexo, String tipo, String raca, Cliente cliente, int idade) {
+    public Animal(String nome, String sexo, String especie, String raca, Cliente dono, LocalDate dataNascimento) {
         this.nome = nome;
         this.sexo = sexo;
-        this.Especie = tipo;
+        this.Especie = especie;
         this.raca = raca;
-        this.cliente = cliente;
-        this.idade = idade;
+        this.dono = dono;
+        this.dataNascimento = dataNascimento;
         this.historico = new ArrayList();
     }
 
-                                                                                                                //getters e setters
+    //getters e setters
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -29,20 +29,17 @@ public class Animal {
         this.sexo = sexo;
     }
 
-    public void setTipo(String tipo) {
-        this.Especie = tipo;
-    }
+    public void setTipo(String tipo) { this.Especie = tipo; }
 
     public void setRaca(String raca) {
         this.raca = raca;
     }
 
-    public void setIdade(int idade) { this.idade = idade; }
-
-    public void setHistorico(Consulta consulta){
-        this.historico.add(consulta);
+    public void setDataNscimento(LocalDate data) {
+        this.dataNascimento = data;
     }
 
+    public void setConsulta(Consulta consulta){ this.historico.add(consulta);}
 
     public String getNome() {
         return nome;
@@ -58,16 +55,41 @@ public class Animal {
         return raca;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public Cliente getDono() {
+        return this.dono;
     }
 
-    public int getIdade() {
-        return idade;
+    public LocalDate getDataNascimento() {
+        return this.dataNascimento;
     }
 
     public ArrayList getHistorico() {
         return historico;
+    }
+
+
+    //Sobreposição de metodos
+    @Override
+    public boolean equals(Object obj){
+        if(obj instanceof Animal){
+            Animal novo = (Animal) obj;
+            if(this.nome.equals(novo.getNome()) && this.getSexo().equals(novo.getSexo()) && this.getEspecie().equals(novo.getEspecie()) && this.getRaca().equals(novo.getRaca())
+                    && this.getDono().equals(novo.getDono()) && this.dataNascimento.equals(novo.getDataNascimento())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "\nNome: " + this.getNome() +
+                "\nSexo: " + this.getSexo() +
+                "\nEspecie: " + this.getEspecie() +
+                "\nRaca: " + this.getRaca() +
+                "\nDono: " + this.getDono() +
+                "\nData de nascimento: " + this.getDataNascimento().toString();
+
     }
 }
 

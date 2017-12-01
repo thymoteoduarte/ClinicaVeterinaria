@@ -11,82 +11,85 @@ public class Repositorios {
     private ArrayList <Veterinario> rVeterinarios;
     private ArrayList <TecnicoVeterinario> rTecnicos;
     private ArrayList <Recepcionista> rRecepcionistas;
+    private ArrayList <Consulta> rConsultas;
 
-                                                    //Construtor:
-
-
+                                                                                                                //Construtor:
     public Repositorios() {
         this.rAnimais = new ArrayList();
         this.rClientes = new ArrayList();
         this.rVeterinarios = new ArrayList();
         this.rTecnicos = new ArrayList();
         this.rRecepcionistas = new ArrayList();
+        this.rConsultas = new ArrayList();
     }
 
-                                                    //Metodos que adicionam personagens em seus repositórios:
-    public void addAnimal(Animal animal){
-         rAnimais.add(animal);
+                                                                                            //Metodos que adicionam personagens em seus repositórios:
+    public void add(Animal animal){
+        rAnimais.add(animal);
     }
 
-    public void addCliente(Cliente cliente){
+    public void add(Cliente cliente){
         rClientes.add(cliente);
     }
 
-    public void addVeterinario(Veterinario veterinario){
+    public void add(Veterinario veterinario){
         rVeterinarios.add(veterinario);
     }
 
-    public void addTecnico(TecnicoVeterinario tec){
+    public void add(TecnicoVeterinario tec){
         rTecnicos.add(tec);
     }
 
-    public void addRecepcionista(Recepcionista recepcionista){
+    public void add(Recepcionista recepcionista){
         rRecepcionistas.add(recepcionista);
     }
 
-                                                    //Metodos que removem personagens de seus repositórios:
+   // public void add(Consulta consulta){rConsultas.add(consulta);}
 
-    public void removeAnimal(Animal animal){
+                                                                                            //Metodos que removem personagens de seus repositórios:
+
+    public void remove(Animal animal){
         rAnimais.remove(animal);
     }
 
-    public void removeCliente(Cliente cliente){
+    public void remove(Cliente cliente){
         rClientes.remove(cliente);
     }
 
-    public void removeVeterinario(Veterinario veterinario){
+    public void remove(Veterinario veterinario){
         rVeterinarios.remove(veterinario);
     }
 
-    public void removeTecnico(TecnicoVeterinario tec){
+    public void remove(TecnicoVeterinario tec){
         rTecnicos.remove(tec);
     }
 
-    public void removeRecepcionista(Recepcionista recepcionista){
+    public void remove(Recepcionista recepcionista){
         rRecepcionistas.remove(recepcionista);
     }
 
+    //public void remove(Consulta consulta){rConsultas.remove(consulta);}
 
 
-                                                    //Metodos que verificam se um personagem está cadastrado:
+                                                                                             //Metodos que verificam se um personagem está cadastrado:
 
-    public boolean contemAnimal(Animal animal){
+    public boolean contem(Animal animal){
         return this.rAnimais.contains(animal);
     }
 
-    public boolean contemCliente(Cliente cliente){
+    public boolean contem(Cliente cliente){
         return this.rClientes.contains(cliente);
     }
 
-    public boolean contemVeterinario(Veterinario veterinario){
+    public boolean contem(Veterinario veterinario){
         return this.rVeterinarios.contains(veterinario);
     }
 
-    public boolean contemTecnico(TecnicoVeterinario tec){
+    public boolean contem(TecnicoVeterinario tec){
         return this.rTecnicos.contains(tec);
     }
 
-    public boolean contemRecepcionista(Recepcionista recepcionista){
-        return this.rRecepcionistas.contains(recepcionista);
-    }
+    public boolean contem(Recepcionista recepcionista){ return this.rRecepcionistas.contains(recepcionista); }
+
+    //public boolean contem(Consulta consulta){return this.rConsultas.contains(consulta);}
 }

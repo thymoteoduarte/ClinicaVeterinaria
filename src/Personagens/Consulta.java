@@ -7,11 +7,13 @@ public class Consulta {
 	Animal animal;
 	LocalDate data;
 	String historico;
+	boolean encerrado;
 
 	public Consulta(Veterinario veterinario, Animal animal, LocalDate data) {
 		this.veterinario = veterinario;
 		this.animal = animal;
 		this.data = data;
+		this.encerrado = false;
 	}
 
 	public Veterinario getVeterinario() {
@@ -31,8 +33,16 @@ public class Consulta {
 	}
 
 
-	public void setHistorico(String historico) {
-		this.historico = historico;
-		animal.setHistorico(this);
+	public boolean setHistorico(String historico) {
+		if(!this.encerrado){
+			this.historico = historico;
+			return true;
+		}
+		return false;                       //o historico só pode ser atualizado em uma consulta em andamento
+	}
+
+	public void encerrar(){
+		this.encerrado = true;
+		this.animal.setConsulta(this);
 	}
 }

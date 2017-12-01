@@ -23,7 +23,7 @@ public abstract class Pessoa {
 
     public abstract void cadastrar(Repositorios repositorio);
 
-                                                                                //getters e setters:
+    //getters e setters:
     /**
      * @return Uma String que significa o nome da Pessoa.
      */
@@ -94,18 +94,18 @@ public abstract class Pessoa {
 
 
 
-                                                                                                            //Sobreescrita de metodos:
+    //Sobreescrita de metodos:
     /**
      * Compara duas Pessoas.
      * @return true se as pessoas tiverem os mesmos nomes, dataNascimento e Sexo. 
      */
     @Override
     public boolean equals(Object obj) {
-		try {
-			Pessoa r = (Pessoa) obj;
-			return this.getNome().equals(r.getNome()) && this.getDataNascimento().equals(r.getDataNascimento()) && this.getSexo().equals(r.getSexo());
-		} catch(Exception ex) {
-			return false;
-		}
+        try {
+            Pessoa r = (Pessoa) obj;
+            return this.getNome().equals(r.getNome()) && this.getDataNascimento().equals(r.getDataNascimento()) && this.getSexo().equals(r.getSexo());
+        } catch(Exception ex) {
+            return false;
+        }
     }
 }
