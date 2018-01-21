@@ -1,15 +1,25 @@
 ---------------------- RECEPCIONISTA -----------------------------
 
-1) Cadastrar cliente (Cliente ou animal).
-2) Veterinário (Marcar consulta ou cirurgia).
-3) Tecnico Veterinário (Marcar Vacinação, banho ou tosa).
-4) Hotelzinho (Reservar vaga, liberar vaga).
+1) Cadastrar
+    1.1)Novo cliente.
+    1.2)Novo animal.
+2) Marcacao
+    2.1)Nova consulta
+    2.2)Cancelar consulta
+    2.3)Remarcar consulta
+3) Consultar cadastros
+    3.1) Remover cadastro cliente
+    3.2) Remover cadastro animal                                OK
+4) Consultar horÃ¡rio
+    4.1) Veterinario
+    4.2) cliente
 
-------------------------- VETERINÁRIO -----------------------------
+------------------------- VETERINï¿½RIO -----------------------------
 
-1)Consulta (Iniciar ou finalizar).
-2)Prontuário (Adicionar observações).
-
----------------------- TÉCNICO VETERINÁRIO ------------------------
-
-1)Atendimento (Iniciar ou finalizar).     (Incluí o banho, a tosa e as vacinações)
+1) Atender
+    1.1) Adicionar Observacao no prontuario do paciente
+    1.2) Finalizar consulta.
+2) Consultar agenda
+3) Novo cadastro
+    3.1) Recepcionista
+    3.2) Veterinario
