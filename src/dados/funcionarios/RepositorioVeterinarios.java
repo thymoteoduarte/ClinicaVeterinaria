@@ -6,43 +6,34 @@ import negocio.excecoes.RepositorioIncompativelException;
 
 import java.util.ArrayList;
 
-public class RepositorioVeterinarios implements IRepositorioFuncionarios{
+public class RepositorioVeterinarios implements IRepositorioVeterinarios{
     private ArrayList<Veterinario> lista;
 
 
     @Override
-    public void adicionar(Funcionario funcionario) throws RepositorioIncompativelException {
-        if(funcionario instanceof Veterinario)
-            this.lista.add((Veterinario) funcionario);
-        else
-            throw new RepositorioIncompativelException();
+    public void adicionar(Veterinario veterinario){
+            this.lista.add((Veterinario) veterinario);
     }
 
     @Override
-    public void remover(Funcionario funcionario) throws RepositorioIncompativelException {
-        if(funcionario instanceof Veterinario)
-            this.lista.remove((Veterinario) funcionario);
-        else
-            throw new RepositorioIncompativelException();
+    public void remover(Veterinario veterinario){
+            this.lista.remove(veterinario);
     }
 
     @Override
-    public void atualizar(Funcionario funcionario) throws RepositorioIncompativelException {
-        if(funcionario instanceof Veterinario)
-            this.lista.add(this.lista.indexOf((Veterinario)funcionario),(Veterinario) funcionario);
-        else
-            throw new RepositorioIncompativelException();
+    public void atualizar(Veterinario veterinario){
+            this.lista.add(this.lista.indexOf(veterinario),veterinario);
     }
 
     @Override
-    public ArrayList getFuncionarios() throws RepositorioIncompativelException {
+    public ArrayList<Veterinario> getVeterinarios(){
         return this.lista;
     }
 
     @Override
-    public boolean existe(Funcionario funcionario) {
-        if (funcionario instanceof Veterinario)
-            return true;
-        return false;
+    public boolean existe(Veterinario funcionario) {
+            return this.lista.contains(funcionario);
     }
+
+
 }
