@@ -1,7 +1,7 @@
 package negocio.entidades.pessoas;
 
 public class Endereco {
-    private String tipo, nome, numero, cep, bairro, cidade, estado;
+    private String tipo, nome, numero, cep, bairro;
 
     //Construtor de Endereco
 
@@ -11,8 +11,6 @@ public class Endereco {
         this.numero = numero;
         this.cep = cep;
         this.bairro = bairro;
-        this.cidade = cidade;
-        this.estado = estado;
     }
 
     //getters e setters
@@ -36,13 +34,6 @@ public class Endereco {
         this.bairro = bairro;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
 
     public String getTipo() {
         return tipo;
@@ -64,14 +55,6 @@ public class Endereco {
         return bairro;
     }
 
-    public String getCidade() {
-        return cidade;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
     //Metodos sbreescritos
     @Override
     public boolean equals(Object obj) {
@@ -86,6 +69,6 @@ public class Endereco {
 
     @Override
     public String toString(){
-        return this.tipo + " " + this.nome + ", nº " + this.numero + ", " + this.bairro + ", CEP: " + this.cep + ", " + this.cidade + " " + this.estado;
+        return this.tipo + " " + this.nome + ", nº " + this.numero + ", " + this.bairro + ", CEP: " + this.cep;
     }
 }

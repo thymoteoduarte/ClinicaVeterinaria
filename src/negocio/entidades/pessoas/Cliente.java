@@ -1,6 +1,7 @@
 package negocio.entidades.pessoas;
 
 import negocio.entidades.Animal;
+import negocio.excecoes.AnimalNaoCadastradoException;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,9 +16,6 @@ public class Cliente extends Pessoa {
         this.listaAnimais = new ArrayList<>();
     }
 
-
-
-
                                                                                                                 //Metodos de Cliente:
 
     /**
@@ -28,7 +26,16 @@ public class Cliente extends Pessoa {
         this.listaAnimais.remove(animal);
     }
 
-
+    /**
+     *
+     * @param animal
+     * @return true se o Animal estiver vinculado ao Cliente
+     */
+    public boolean ehDono(Animal animal){
+        if(this.listaAnimais.contains(animal))
+            return true;
+        return false;
+    }
                                                                                                            //getters e setters:
 
     /**
@@ -52,12 +59,12 @@ public class Cliente extends Pessoa {
      * @param nome
      * @return Retorna um animal, se existir um animal na ListaDeAnimais do Cliente com o nome igual ao passado como parametro, caso contrário, retorna null.
      */
-    public Animal getAnimal(String nome) {
+    public Animal getAnimal(String nome) throws AnimalNaoCadastradoException{
         for (Animal n : this.listaAnimais) {
             if (n.getNome().equals(nome))
                 return n;
         }
-        return null;
+        throw new AnimalNaoCadastradoException();
     }
 
 

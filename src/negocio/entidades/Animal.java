@@ -12,7 +12,7 @@ public class Animal {
 
                                                                                                             //Construtor de Animal
 
-    public Animal(String nome, String sexo, String especie, String raca, Cliente dono, LocalDate dataNascimento) {
+    public Animal(String nome, String sexo, String especie, String raca, LocalDate dataNascimento) {
         this.nome = nome;
         this.sexo = sexo;
         this.Especie = especie;

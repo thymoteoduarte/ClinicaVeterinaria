@@ -47,13 +47,7 @@ public class RepositorioClientes implements IRepositorioClientes {
         return false;
     }
 
-    //metodo auxiliar para resgatar um cliente atravez do seu nome e data de nascimento
-    public Cliente getCliente (String nome, LocalDate data) throws ClienteNaoCadastradoException {
-        for (Cliente cliente : lista){
-            if(cliente.getNome().equals(nome) && cliente.getDataNascimento().equals(data)){
-                return cliente;
-            }
-        }
-        throw new ClienteNaoCadastradoException();
+    public ArrayList<Cliente> getLista() {
+        return lista;
     }
 }

@@ -26,12 +26,6 @@ public class Recepcionista extends Funcionario {
 
                                                                                                             //Metodos de Recepcionista:
 
-    /**
-     * Recebe um Animal e um Cliente, e o coloca no repositório de Animais
-     */
-    public void cadastrarAnimal(Animal animal, Cliente cliente){
-        cliente.setAnimal(animal);
-    }
 
     /**
      * Reserva o horário de um veterinario para a consulta ou cirurgia de um animal.
