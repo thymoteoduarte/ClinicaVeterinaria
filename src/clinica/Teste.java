@@ -6,6 +6,7 @@ import negocio.entidades.Animal;
 import negocio.entidades.Consulta;
 import negocio.entidades.pessoas.Recepcionista;
 import negocio.entidades.pessoas.Veterinario;
+import negocio.excecoes.ConsultaJaMarcadaException;
 
 import java.time.LocalDate;
 
@@ -23,8 +24,14 @@ public class Teste {
     	Animal animal =  new Animal("asa", "sa", "sas", "SAS",  LocalDate.now());
     	Consulta cons = new Consulta(vet, animal, LocalDate.now());
     	NegocioRecepcionista nrc = new NegocioRecepcionista(new RepositorioRecepcionistas());
-    	nrc.marcarConsulta(animal, vet, LocalDate.now());
-    	System.out.println(vet.getConsultasMarcadas().toString());
+    	
+    	try {
+    		nrc.marcarConsulta(animal, vet, LocalDate.now());
+        	System.out.println(vet.getConsultasMarcadas().toString());
+    	}catch(Exception ex) {
+    		System.out.println("Erro!");
+    	}
+    	
 
 
 

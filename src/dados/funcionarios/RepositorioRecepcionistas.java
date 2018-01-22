@@ -1,7 +1,6 @@
 package dados.funcionarios;
 
 import negocio.entidades.pessoas.Recepcionista;
-import negocio.excecoes.RepositorioIncompativelException;
 
 import java.util.ArrayList;
 

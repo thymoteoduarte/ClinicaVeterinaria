@@ -5,9 +5,9 @@ import java.time.LocalDate;
 import dados.funcionarios.RepositorioVeterinarios;
 import negocio.entidades.Animal;
 import negocio.entidades.Consulta;
-import negocio.entidades.pessoas.Recepcionista;
-//import negocio.entidades.pessoas.Veterinario;
 import negocio.entidades.pessoas.Veterinario;
+import negocio.excecoes.ConsultaJaEncerradaException;
+import negocio.excecoes.ConsultaNaoMarcadaException;
 import negocio.excecoes.LoginInvalidoException;
 
 public class NegocioVeterinario {
@@ -18,12 +18,20 @@ public class NegocioVeterinario {
 	}
 	
 	
-	public void encerrar (Veterinario vet, Animal animal, String obs ) {
+	public void encerrar (Veterinario vet, Animal animal, String obs )  throws ConsultaNaoMarcadaException, ConsultaJaEncerradaException{
 		Consulta consulta = new Consulta(vet, animal, LocalDate.now());
-		if(vet.getConsultasMarcadas().contains(consulta) && !consulta.getEncerrado()) {
-			consulta.setHistorico(obs);
-			consulta.encerrar();
-			vet.getConsultasMarcadas().set(vet.getConsultasMarcadas().indexOf(consulta), consulta);
+		
+		if(vet.getConsultasMarcadas().contains(consulta)) {
+			if(!consulta.getEncerrado()) {
+				consulta.setHistorico(obs);
+				consulta.encerrar();
+				vet.getConsultasMarcadas().set(vet.getConsultasMarcadas().indexOf(consulta), consulta);	
+			}else {
+				throw new ConsultaJaEncerradaException();
+			}
+			
+		}else {
+			throw new ConsultaNaoMarcadaException();
 		}
 		
 		

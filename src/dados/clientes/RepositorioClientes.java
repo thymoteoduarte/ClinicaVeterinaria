@@ -1,9 +1,6 @@
 package dados.clientes;
 
 import negocio.entidades.pessoas.Cliente;
-import negocio.excecoes.ClienteNaoCadastradoException;
-
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 //As regras de negocio serão implementadas na classe NegocioCliente.

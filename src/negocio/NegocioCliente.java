@@ -1,7 +1,6 @@
 package negocio;
 
 import dados.clientes.RepositorioClientes;
-import dados.funcionarios.RepositorioRecepcionistas;
 import negocio.entidades.Animal;
 import negocio.entidades.pessoas.Cliente;
 import negocio.excecoes.AnimalJaCadastradoException;

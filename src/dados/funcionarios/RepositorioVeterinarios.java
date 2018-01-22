@@ -1,9 +1,7 @@
 package dados.funcionarios;
 
-import negocio.entidades.pessoas.Funcionario;
-import negocio.entidades.pessoas.Veterinario;
-import negocio.excecoes.RepositorioIncompativelException;
 
+import negocio.entidades.pessoas.Veterinario;
 import java.util.ArrayList;
 
 public class RepositorioVeterinarios implements IRepositorioVeterinarios{
