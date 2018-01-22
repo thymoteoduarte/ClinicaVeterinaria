@@ -47,4 +47,7 @@ public class Consulta {
 		this.encerrado = true;
 		this.animal.setConsulta(this);
 	}
+	public boolean getEncerrado() {
+		return this.encerrado;
+	}
 }
