@@ -39,9 +39,6 @@ public class NegocioRecepcionista {
     	}else {
     		throw new ConsultaJaMarcadaException();
     	}
-    	
-    	
-    	
     }
     
     //Retira uma consulta da lista de consultas marcadas de um veterinario
