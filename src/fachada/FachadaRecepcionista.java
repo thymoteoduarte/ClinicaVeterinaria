@@ -22,12 +22,12 @@ public class FachadaRecepcionista {
     private NegocioVeterinario veterinario;
 
     public FachadaRecepcionista() {
-        this.cliente = new NegocioCliente(new RepositorioClientes());                       //este repositorio pode ser dcarregado de um arquivo
+        this.cliente = new NegocioCliente(new RepositorioClientes());  //este repositorio pode ser carregado de um arquivo
     }
 
 
 
-                                                                                                //metodos para consulta de cadastros:
+                                                                                                     //metodos para consulta de cadastros:
 
     //consulta o cadatro de um cliente atravez de seu nome
     public void consultarCadastroCliente(String nome, LocalDate data){
@@ -74,7 +74,7 @@ public class FachadaRecepcionista {
     }
 
 
-                                                                                        //metodos para consulta de horarios
+                                                                                                    //metodos para consulta de horarios
 
     //Consulta as consultas marcadas para um veterinario para um data especifica
     public void consultarHorarios(String nomeVet, LocalDate data) {
@@ -94,23 +94,7 @@ public class FachadaRecepcionista {
         }
     }
 
-
-    //Recebe os dados do veterinario do animal e a data da consulta
-    public void marcarConsulta(String nomeCliente, LocalDate dn, String nomeAnimal, String nomeVet, LocalDate data){
-        try {
-            Cliente c = this.cliente.getCliente(nomeCliente, dn);
-            Animal a = c.getAnimal(nomeAnimal);
-            this.recepcionista.marcarConsulta(a, this.veterinario.getVeterinario(nomeVet),data);
-        }catch(ClienteNaoCadastradoException ex){
-            //exibir a mensagem !
-        }catch (AnimalNaoCadastradoException ex) {
-            //exibir mensagem !
-        }catch (VeterinarioNaoCadastradoExceptions ex){
-            //exibir mensagem !
-        }catch (ConsultaJaMarcadaException ex) {
-            //exibir mensagem !
-        }
-    }
+                                                                                                            //metodos de cadastros
 
 
     //Cadastra um cliente no sistema
@@ -120,13 +104,10 @@ public class FachadaRecepcionista {
         try{
             cliente.novoCadastro(novo);
         }catch (ClienteJaCadastradoException ex){
-            //exibir mensagem de erro.
+            ex.exibir();
         }
 
     }
-
-
-
 
     //Vincula um animal a um cliente já cadastrado no sistema
     public void cadastrarAnimal(String nomeCliente, LocalDate dn, String nomeAnimal, String sexo, String especie, String raca, LocalDate dnAnimal){
@@ -136,16 +117,19 @@ public class FachadaRecepcionista {
 
             cliente.cadastrarAnimal(c, novo);
         }catch (ClienteNaoCadastradoException ex) {
-            //exibir a mensagem de erro.
-        } catch (AnimalJaCadastradoException e) {
-            //exibir a mensagem de erro.
+            ex.exibir();
+        } catch (AnimalJaCadastradoException ex) {
+            ex.exibir();
         }
     }
 
 
+                                                                                                    //metodos de agendamento de consultas
 
+    //Agenda uma consulta para um animal, em uma data especifia
+    public void marcarConsulta(String nomeVet){
 
-
+    }
 
 
 

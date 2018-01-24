@@ -1,6 +1,8 @@
 package negocio.entidades.pessoas;
 
+import negocio.entidades.Animal;
 import negocio.entidades.Consulta;
+import negocio.excecoes.ConsultaJaEncerradaException;
 import negocio.excecoes.FuncionarioNaoCadastradoException;
 
 import java.time.LocalDate;
@@ -56,22 +58,21 @@ public class Veterinario extends Funcionario {
         this.consultasMarcadas.remove(consulta);
     }
 
-    /**
-     * Insere uma observação na consulta do cliente.
-     * @param consulta
-     * @param observacao
-     */
-    public void setObs(Consulta consulta, String observacao){
-        consulta.setHistorico(observacao);
-    }
 
     /**
      * Finaliza um consulta, adicionando ela ao repositorio de consultas do animal, e retirando do repositorio de consultas marcadas do veterinario.
      * @param consulta
      */
-    public void finalizarConsulta(Consulta consulta){
-        consulta.encerrar();
-        this.consultasMarcadas.remove(consulta);
+    public void finalizarConsulta(Animal animal, Consulta consulta ,String obs) throws ConsultaJaEncerradaException{
+        if (!consulta.getEncerrado()) {
+            consulta.setHistorico(obs);
+            consulta.encerrar();
+            animal.setConsulta(consulta);
+            this.consultasMarcadas.remove(consulta);
+        }else{
+            throw new ConsultaJaEncerradaException();
+        }
+
     }
 
     /**
