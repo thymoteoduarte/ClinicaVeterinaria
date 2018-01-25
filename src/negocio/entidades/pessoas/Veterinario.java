@@ -3,6 +3,7 @@ package negocio.entidades.pessoas;
 import negocio.entidades.Animal;
 import negocio.entidades.Consulta;
 import negocio.excecoes.ConsultaJaEncerradaException;
+import negocio.excecoes.ConsultaNaoMarcadaException;
 import negocio.excecoes.FuncionarioNaoCadastradoException;
 
 import java.time.LocalDate;
@@ -54,8 +55,11 @@ public class Veterinario extends Funcionario {
      * Remove um consulta do repositorio de consultas marcadas.
      * @param consulta
      */
-    public void desmarcar(Consulta consulta){
-        this.consultasMarcadas.remove(consulta);
+    public void desmarcar(Consulta consulta) throws ConsultaNaoMarcadaException {
+        if(this.getConsultasMarcadas().contains(consulta))
+            this.consultasMarcadas.remove(consulta);
+        else
+            throw new ConsultaNaoMarcadaException();
     }
 
 

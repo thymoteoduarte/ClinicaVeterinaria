@@ -71,17 +71,17 @@ public class NegocioCliente {
     //Verifica se o cliente está cadastrado no sistema;
     //Verifica se existe algum animal com o nome passado como parametro que esteja vinculado ao cliente;
     //retorna o animal;
-    public Animal getAnimal(Cliente cliente, String nomeAnimal) throws AnimalNaoCadastradoException, ClienteNaoCadastradoException {
-        if(this.repositorioClientes.exite(cliente)){
-            for(Animal animal : cliente.getListaAnimais()){
+    public Animal getAnimal(String nomeCliente, LocalDate dn, String nomeAnimal) throws AnimalNaoCadastradoException, ClienteNaoCadastradoException {
+        if(this.repositorioClientes.exite(this.getCliente(nomeCliente, dn) )){
+            Cliente c = this.getCliente(nomeCliente, dn);
+            for(Animal animal : c.getListaAnimais()){
                 if(animal.getNome().equals(nomeAnimal)){
                     return animal;
                 }
             }
             throw new AnimalNaoCadastradoException();
-        }else
+        } else
             throw new ClienteNaoCadastradoException();
-
     }
 
 

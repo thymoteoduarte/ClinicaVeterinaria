@@ -1,6 +1,7 @@
 package negocio.entidades;
 
 import negocio.entidades.pessoas.Cliente;
+import negocio.excecoes.ConsultaNaoMarcadaException;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class Animal {
         this.Especie = especie;
         this.raca = raca;
         this.dataNascimento = dataNascimento;
-        this.historico = new ArrayList<Consulta>();
+        this.historico = new ArrayList();
     }
 
 
@@ -69,6 +70,14 @@ public class Animal {
     }
 
 
+    //usado na hora de desmarcar uma consulta
+    public void removerConsulta(Consulta consulta) throws ConsultaNaoMarcadaException {
+        if(this.historico.contains(consulta))
+            this.historico.remove(consulta);
+        else
+            throw new ConsultaNaoMarcadaException();
+    }
+
                                                                                                             //Sobreposição de metodos
     @Override
     public boolean equals(Object obj){
@@ -91,6 +100,8 @@ public class Animal {
                 "\nData de nascimento: " + this.getDataNascimento().toString();
 
     }
+
+
 }
 
 

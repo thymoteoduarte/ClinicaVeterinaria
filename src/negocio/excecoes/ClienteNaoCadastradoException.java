@@ -10,4 +10,5 @@ public class ClienteNaoCadastradoException extends Exception {
     public void exibir() {
         JanelaMensagem janela = new JanelaMensagem(this);
     }
+
 }

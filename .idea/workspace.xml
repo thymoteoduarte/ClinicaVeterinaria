@@ -2,12 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bee0474-b0ca-4a67-9c29-2ecad41d63c5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gui/janelasFuncionarios/JanelaRecepcionista.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/clinica/Teste.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/dados/funcionarios/RepositorioVeterinarios.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/fachada/FachadaRecepcionista.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/NegocioRecepcionista.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/NegocioVeterinario.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/entidades/pessoas/Recepcionista.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/excecoes/RepositorioIncompativelException.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/dados/clientes/RepositorioClientes.class" afterPath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/dados/clientes/RepositorioClientes.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/dados/funcionarios/RepositorioRecepcionistas.class" afterPath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/dados/funcionarios/RepositorioRecepcionistas.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/NegocioCliente.class" afterPath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/NegocioCliente.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/entidades/Animal.class" afterPath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/entidades/Animal.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/entidades/Consulta.class" afterPath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/entidades/Consulta.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/entidades/pessoas/Veterinario.class" afterPath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/entidades/pessoas/Veterinario.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/excecoes/AnimalJaCadastradoException.class" afterPath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/excecoes/AnimalJaCadastradoException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/excecoes/AnimalNaoCadastradoException.class" afterPath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/excecoes/AnimalNaoCadastradoException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/excecoes/ClienteJaCadastradoException.class" afterPath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/excecoes/ClienteJaCadastradoException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/excecoes/ClienteNaoCadastradoException.class" afterPath="$PROJECT_DIR$/out/production/ClinicaVeterinaria/negocio/excecoes/ClienteNaoCadastradoException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/clinica/Teste.java" afterPath="$PROJECT_DIR$/src/clinica/Teste.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fachada/FachadaRecepcionista.java" afterPath="$PROJECT_DIR$/src/fachada/FachadaRecepcionista.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/janelasCliente/JanelaCliente.java" afterPath="$PROJECT_DIR$/src/gui/janelasCliente/JanelaCliente.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/negocio/NegocioCliente.java" afterPath="$PROJECT_DIR$/src/negocio/NegocioCliente.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/negocio/NegocioVeterinario.java" afterPath="$PROJECT_DIR$/src/negocio/NegocioVeterinario.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/negocio/entidades/Animal.java" afterPath="$PROJECT_DIR$/src/negocio/entidades/Animal.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/negocio/entidades/Consulta.java" afterPath="$PROJECT_DIR$/src/negocio/entidades/Consulta.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/negocio/entidades/pessoas/Recepcionista.java" afterPath="$PROJECT_DIR$/src/negocio/entidades/pessoas/Recepcionista.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/negocio/entidades/pessoas/Veterinario.java" afterPath="$PROJECT_DIR$/src/negocio/entidades/pessoas/Veterinario.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/negocio/excecoes/AnimalJaCadastradoException.java" afterPath="$PROJECT_DIR$/src/negocio/excecoes/AnimalJaCadastradoException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/negocio/excecoes/ClienteJaCadastradoException.java" afterPath="$PROJECT_DIR$/src/negocio/excecoes/ClienteJaCadastradoException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/negocio/excecoes/ConsultaJaMarcadaException.java" afterPath="$PROJECT_DIR$/src/negocio/excecoes/ConsultaJaMarcadaException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/negocio/excecoes/ClienteNaoCadastradoException.java" afterPath="$PROJECT_DIR$/src/negocio/excecoes/ClienteNaoCadastradoException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/negocio/excecoes/ConsultaJaEncerradaException.java" afterPath="$PROJECT_DIR$/src/negocio/excecoes/ConsultaJaEncerradaException.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,13 +43,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FachadaRecepcionista.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FachadaRecepcionista.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fachada/FachadaRecepcionista.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="106" column="24" lean-forward="false" selection-start-line="106" selection-start-column="24" selection-end-line="106" selection-end-column="24" />
+            <state relative-caret-position="255">
+              <caret line="39" column="156" lean-forward="false" selection-start-line="39" selection-start-column="156" selection-end-line="39" selection-end-column="156" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Teste.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/clinica/Teste.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="72" lean-forward="false" selection-start-line="17" selection-start-column="72" selection-end-line="17" selection-end-column="72" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#497#498#0" expanded="true" />
+                <element signature="e#570#571#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConsultaJaEncerradaException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/negocio/excecoes/ConsultaJaEncerradaException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+              <folding>
+                <element signature="e#128#129#0" expanded="true" />
+                <element signature="e#171#172#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JanelaRecepcionista.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/janelasFuncionarios/JanelaRecepcionista.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JanelaCliente.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/janelasCliente/JanelaCliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NegocioCliente.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/negocio/NegocioCliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-374">
+              <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+              <folding>
+                <element signature="e#3467#3468#0" expanded="true" />
+                <element signature="e#3509#3510#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -34,33 +118,28 @@
       <file leaf-file-name="Veterinario.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/negocio/entidades/pessoas/Veterinario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="72" column="53" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="53" />
+            <state relative-caret-position="476">
+              <caret line="61" column="51" lean-forward="true" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Consulta.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/negocio/entidades/Consulta.java">
+      <file leaf-file-name="Recepcionista.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/negocio/entidades/pessoas/Recepcionista.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="34" column="35" lean-forward="false" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
-              <folding>
-                <element signature="e#697#698#0" expanded="true" />
-                <element signature="e#730#731#0" expanded="true" />
-                <element signature="e#756#757#0" expanded="true" />
-                <element signature="e#784#785#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="697">
+              <caret line="46" column="124" lean-forward="true" selection-start-line="46" selection-start-column="124" selection-end-line="46" selection-end-column="124" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JanelaConsultasMarcadas.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/janelasFuncionarios/JanelaConsultasMarcadas.java">
+      <file leaf-file-name="Animal.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/negocio/entidades/Animal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+            <state relative-caret-position="211">
+              <caret line="73" column="16" lean-forward="false" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -69,21 +148,11 @@
       <file leaf-file-name="NegocioVeterinario.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/negocio/NegocioVeterinario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="194">
+              <caret line="36" column="36" lean-forward="false" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NegocioRecepcionista.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/negocio/NegocioRecepcionista.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="34" column="83" lean-forward="false" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="83" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -115,8 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/negocio/pessoas/Endereco.java" />
-        <option value="$PROJECT_DIR$/src/gui/TelaFuncionario.java" />
         <option value="$PROJECT_DIR$/src/gui/MenuFuncionario.java" />
         <option value="$PROJECT_DIR$/src/negocio/excecoes/FuncionarioNaoCadastradoException.java" />
         <option value="$PROJECT_DIR$/src/negocio/pessoas/Recepcionista.java" />
@@ -140,32 +207,34 @@
         <option value="$PROJECT_DIR$/src/negocio/entidades/pessoas/Endereco.java" />
         <option value="$PROJECT_DIR$/src/gui/janelasCliente/CadastroClienteControle.java" />
         <option value="$PROJECT_DIR$/src/gui/janelasFuncionarios/LoginControle.java" />
-        <option value="$PROJECT_DIR$/src/negocio/excecoes/ClienteNaoCadastradoException.java" />
         <option value="$PROJECT_DIR$/src/dados/funcionarios/RepositorioFuncionarios.java" />
         <option value="$PROJECT_DIR$/src/negocio/excecoes/RepositorioIncompativelException.java" />
         <option value="$PROJECT_DIR$/src/dados/funcionarios/IRepositorioFuncionarios.java" />
         <option value="$PROJECT_DIR$/src/dados/clientes/RepositorioClientes.java" />
         <option value="$PROJECT_DIR$/src/dados/funcionarios/RepositorioVeterinarios.java" />
         <option value="$PROJECT_DIR$/src/dados/funcionarios/RepositorioRecepcionistas.java" />
-        <option value="$PROJECT_DIR$/src/negocio/entidades/Animal.java" />
-        <option value="$PROJECT_DIR$/src/negocio/entidades/pessoas/Recepcionista.java" />
         <option value="$PROJECT_DIR$/src/fachada/fachadaRecepcionista.java" />
         <option value="$PROJECT_DIR$/src/negocio/entidades/pessoas/Cliente.java" />
-        <option value="$PROJECT_DIR$/src/negocio/NegocioCliente.java" />
-        <option value="$PROJECT_DIR$/src/clinica/Teste.java" />
         <option value="$PROJECT_DIR$/src/negocio/NegocioRecepcionista.java" />
         <option value="$PROJECT_DIR$/src/gui/janelasCliente/ExibirCadastros.java" />
         <option value="$PROJECT_DIR$/src/negocio/excecoes/AnimalNaoCadastradoException.java" />
         <option value="$PROJECT_DIR$/src/negocio/excecoes/VeterinarioNaoCadastradoExceptions.java" />
-        <option value="$PROJECT_DIR$/src/negocio/NegocioVeterinario.java" />
-        <option value="$PROJECT_DIR$/src/gui/janelasCliente/JanelaCliente.java" />
         <option value="$PROJECT_DIR$/src/gui/janelasFuncionarios/JanelaConsultasMarcadas.java" />
         <option value="$PROJECT_DIR$/src/negocio/excecoes/ConsultaJaMarcadaException.java" />
+        <option value="$PROJECT_DIR$/src/negocio/excecoes/AnimalJaCadastradoException.java" />
+        <option value="$PROJECT_DIR$/src/negocio/excecoes/ClienteJaCadastradoException.java" />
+        <option value="$PROJECT_DIR$/src/negocio/excecoes/ClienteNaoCadastradoException.java" />
+        <option value="$PROJECT_DIR$/src/negocio/entidades/Animal.java" />
         <option value="$PROJECT_DIR$/src/negocio/entidades/pessoas/Veterinario.java" />
         <option value="$PROJECT_DIR$/src/negocio/entidades/Consulta.java" />
-        <option value="$PROJECT_DIR$/src/negocio/excecoes/AnimalJaCadastradoException.java" />
+        <option value="$PROJECT_DIR$/src/gui/janelasCliente/JanelaCliente.java" />
+        <option value="$PROJECT_DIR$/src/negocio/NegocioCliente.java" />
+        <option value="$PROJECT_DIR$/src/gui/janelasFuncionarios/JanelaRecepcionista.java" />
+        <option value="$PROJECT_DIR$/src/negocio/excecoes/ConsultaJaEncerradaException.java" />
+        <option value="$PROJECT_DIR$/src/negocio/NegocioVeterinario.java" />
+        <option value="$PROJECT_DIR$/src/negocio/entidades/pessoas/Recepcionista.java" />
         <option value="$PROJECT_DIR$/src/fachada/FachadaRecepcionista.java" />
-        <option value="$PROJECT_DIR$/src/negocio/excecoes/ClienteJaCadastradoException.java" />
+        <option value="$PROJECT_DIR$/src/clinica/Teste.java" />
       </list>
     </option>
   </component>
@@ -193,9 +262,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,53 +281,13 @@
               <item name="ClinicaVeterinaria" type="b2602c69:ProjectViewProjectNode" />
               <item name="ClinicaVeterinaria" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dados" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ClinicaVeterinaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ClinicaVeterinaria" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="fachada" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ClinicaVeterinaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ClinicaVeterinaria" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ClinicaVeterinaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ClinicaVeterinaria" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="janelasFuncionarios" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ClinicaVeterinaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ClinicaVeterinaria" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="negocio" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ClinicaVeterinaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ClinicaVeterinaria" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="negocio" type="462c0819:PsiDirectoryNode" />
-              <item name="entidades" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ClinicaVeterinaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ClinicaVeterinaria" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="negocio" type="462c0819:PsiDirectoryNode" />
-              <item name="entidades" type="462c0819:PsiDirectoryNode" />
-              <item name="pessoas" type="462c0819:PsiDirectoryNode" />
+              <item name="clinica" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -267,16 +296,16 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Yuri\Desktop\Faculdade\2º periodo\POO\ClinicaVeterinaria\src\gui\janelasCliente" />
-      <recent name="C:\Users\Yuri\Desktop\Faculdade\2º periodo\POO\ClinicaVeterinaria\src\gui\janelasFuncionarios" />
-      <recent name="C:\Users\Yuri\Desktop\Faculdade\2º periodo\POO\ClinicaVeterinaria\src\Personagens" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="gui.janelasFuncionarios" />
       <recent name="gui.janelasCliente" />
       <recent name="negocio.excecoes" />
       <recent name="gui.janelasMensagens" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yuri\Desktop\Faculdade\2º periodo\POO\ClinicaVeterinaria\src\gui\janelasCliente" />
+      <recent name="C:\Users\Yuri\Desktop\Faculdade\2º periodo\POO\ClinicaVeterinaria\src\gui\janelasFuncionarios" />
+      <recent name="C:\Users\Yuri\Desktop\Faculdade\2º periodo\POO\ClinicaVeterinaria\src\Personagens" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -438,13 +467,14 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.078331634" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34384537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34384537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.16581891" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -459,7 +489,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26246184" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -474,8 +503,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/repositorios/RepositorioFuncionarios.java" />
-    <entry file="file://$PROJECT_DIR$/src/repositorios/RepositorioVet.java" />
     <entry file="file://$PROJECT_DIR$/src/negocio/entidades/pessoas/Endereco.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -595,13 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/negocio/excecoes/ClienteNaoCadastradoException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/negocio/excecoes/RepositorioIncompativelException.java" />
     <entry file="file://$PROJECT_DIR$/src/dados/funcionarios/IRepositorioFuncionarios.java" />
     <entry file="file://$PROJECT_DIR$/src/negocio/NegocioCliente.java">
@@ -609,8 +629,8 @@
         <state relative-caret-position="238">
           <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
           <folding>
-            <element signature="e#3372#3373#0" expanded="false" />
-            <element signature="e#3414#3415#0" expanded="false" />
+            <element signature="e#3467#3468#0" expanded="true" />
+            <element signature="e#3509#3510#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -636,14 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/negocio/entidades/Animal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="97" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dados/clientes/RepositorioClientes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -651,45 +663,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/clinica/Teste.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/negocio/NegocioCliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="89" column="5" lean-forward="false" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
-          <folding>
-            <element signature="e#3372#3373#0" expanded="false" />
-            <element signature="e#3414#3415#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/negocio/entidades/pessoas/Recepcionista.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/negocio/entidades/pessoas/Cliente.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/negocio/NegocioRecepcionista.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="34" column="83" lean-forward="false" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,56 +685,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/negocio/NegocioVeterinario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/janelasCliente/JanelaCliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/janelasFuncionarios/JanelaConsultasMarcadas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/negocio/excecoes/ConsultaJaMarcadaException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/negocio/entidades/Consulta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="34" column="35" lean-forward="false" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
-          <folding>
-            <element signature="e#697#698#0" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#784#785#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/negocio/entidades/pessoas/Veterinario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="72" column="53" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="53" />
           <folding />
         </state>
       </provider>
@@ -778,12 +709,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fachada/FachadaRecepcionista.java">
+    <entry file="file://$PROJECT_DIR$/src/negocio/excecoes/ClienteNaoCadastradoException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="106" column="24" lean-forward="false" selection-start-line="106" selection-start-column="24" selection-end-line="106" selection-end-column="24" />
+        <state relative-caret-position="136">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/negocio/NegocioRecepcionista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/janelasFuncionarios/JanelaConsultasMarcadas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/negocio/entidades/pessoas/Veterinario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="61" column="51" lean-forward="true" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/negocio/entidades/Consulta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="28" column="50" lean-forward="false" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/janelasCliente/JanelaCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/negocio/NegocioCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-374">
+          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+          <folding>
+            <element signature="e#3467#3468#0" expanded="true" />
+            <element signature="e#3509#3510#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/janelasFuncionarios/JanelaRecepcionista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/negocio/excecoes/ConsultaJaEncerradaException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <folding>
+            <element signature="e#128#129#0" expanded="true" />
+            <element signature="e#171#172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/negocio/NegocioVeterinario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="36" column="36" lean-forward="false" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/negocio/entidades/Animal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="73" column="16" lean-forward="false" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/negocio/entidades/pessoas/Recepcionista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="46" column="124" lean-forward="true" selection-start-line="46" selection-start-column="124" selection-end-line="46" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fachada/FachadaRecepcionista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="39" column="156" lean-forward="false" selection-start-line="39" selection-start-column="156" selection-end-line="39" selection-end-column="156" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clinica/Teste.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="72" lean-forward="false" selection-start-line="17" selection-start-column="72" selection-end-line="17" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#497#498#0" expanded="true" />
+            <element signature="e#570#571#0" expanded="true" />
           </folding>
         </state>
       </provider>

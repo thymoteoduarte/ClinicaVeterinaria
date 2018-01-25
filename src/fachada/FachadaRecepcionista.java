@@ -3,6 +3,7 @@ package fachada;
 import dados.clientes.RepositorioClientes;
 import gui.janelasCliente.JanelaCliente;
 import gui.janelasFuncionarios.JanelaConsultasMarcadas;
+import gui.janelasFuncionarios.JanelaRecepcionista;
 import negocio.NegocioCliente;
 import negocio.NegocioRecepcionista;
 import negocio.NegocioVeterinario;
@@ -14,6 +15,7 @@ import negocio.entidades.pessoas.Veterinario;
 import negocio.excecoes.*;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class FachadaRecepcionista {
@@ -28,6 +30,17 @@ public class FachadaRecepcionista {
 
 
                                                                                                      //metodos para consulta de cadastros:
+
+
+    //consulta toda a lista de clientes cadastrados no sistema
+    public void consultarListaClientes(){
+        ArrayList<String> listaDeCliente = new ArrayList();
+
+        for(Cliente cliente : this.cliente.getRepositorioClientes().getClientes())
+            listaDeCliente.add(cliente.getNome() + "          Data de Nascinmento: " + cliente.getDataNascimento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+
+        new JanelaRecepcionista().exibirListaClientes(listaDeCliente);
+    }
 
     //consulta o cadatro de um cliente atravez de seu nome
     public void consultarCadastroCliente(String nome, LocalDate data){
@@ -51,7 +64,7 @@ public class FachadaRecepcionista {
                 informacoes.add(animal.getNome());
             }
 
-            janelaCliente.exibirInformacoes(c.getNome(),informacoes);
+            janelaCliente.exibirListaAnimais(c.getNome(),informacoes);
         }catch (ClienteNaoCadastradoException ex) {
             ex.exibir();
         }
@@ -60,11 +73,10 @@ public class FachadaRecepcionista {
     //Exibe informações de um unico animal do cliente
     public void consultarAnimal(String nomeCliente, LocalDate dn, String nomeAnimal){
         try {
-            Cliente c = this.cliente.getCliente(nomeCliente, dn);
-            Animal a = c.getAnimal(nomeAnimal);
+            Animal a = cliente.getAnimal(nomeCliente, dn, nomeAnimal);
             JanelaCliente janelaCliente = new JanelaCliente();
 
-            janelaCliente.exibirInformacoes(c.getNome(), a.toString());
+            janelaCliente.exibirInformacoes(nomeCliente, a.toString());
 
         }catch (ClienteNaoCadastradoException ex){
             ex.exibir();
@@ -127,7 +139,45 @@ public class FachadaRecepcionista {
                                                                                                     //metodos de agendamento de consultas
 
     //Agenda uma consulta para um animal, em uma data especifia
-    public void marcarConsulta(String nomeVet){
+    public void marcarConsulta(String nomeVet, String nomeCliente, LocalDate dn, String nomeAnimmal, LocalDate data){
+        try {
+            Animal animal = this.cliente.getAnimal(nomeCliente, dn, nomeAnimmal);
+            Veterinario vet = this.veterinario.getVeterinario(nomeVet);
+            Consulta consulta = new Consulta(vet, animal, data);
+
+            animal.setConsulta(consulta);
+            vet.preencherVaga(consulta);
+            //atualizar os repositorios
+        } catch (ClienteNaoCadastradoException e) {
+            e.exibir();
+        } catch (AnimalNaoCadastradoException e) {
+            e.exibir();
+        } catch (VeterinarioNaoCadastradoExceptions e) {
+            e.exibir();
+        }
+    }
+
+
+    //Desmarca uma consulta
+    public void desmarcarConsulta(String nomeVet, String nomeCliente, LocalDate dn, String nomeAnimal, LocalDate data){
+        try {
+            Veterinario vet = veterinario.getVeterinario(nomeVet);
+            Animal a = cliente.getAnimal(nomeCliente, dn, nomeAnimal);
+            Consulta consulta = new Consulta(vet, a,data);
+
+            vet.desmarcar(consulta);
+            a.removerConsulta(consulta);
+
+            //atualizar os repositorios
+        } catch (VeterinarioNaoCadastradoExceptions e) {
+            e.exibir();
+        } catch (ClienteNaoCadastradoException e) {
+            e.exibir();
+        } catch (AnimalNaoCadastradoException e) {
+            e.exibir();
+        } catch (ConsultaNaoMarcadaException e) {
+            e.printStackTrace();
+        }
 
     }
 

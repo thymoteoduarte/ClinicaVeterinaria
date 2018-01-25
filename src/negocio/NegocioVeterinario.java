@@ -36,11 +36,12 @@ public class NegocioVeterinario {
 	public void encerrar (Veterinario vet, Animal animal, String obs )  throws ConsultaNaoMarcadaException, ConsultaJaEncerradaException{
 		Consulta consulta = new Consulta(vet, animal, LocalDate.now());
 		
-		if(vet.getConsultasMarcadas().contains(consulta)) {
-			if(!consulta.getEncerrado()) {
+		if(vet.getConsultasMarcadas().contains(consulta)) {												//verifica se a consulta esta marcada
+			if(!consulta.getEncerrado()) {																//verifica se ela ja está encarrada
 				consulta.setHistorico(obs);
 				consulta.encerrar();
-				vet.getConsultasMarcadas().set(vet.getConsultasMarcadas().indexOf(consulta), consulta);	
+				animal.setConsulta(consulta);
+				vet.getConsultasMarcadas().set(vet.getConsultasMarcadas().indexOf(consulta), consulta);
 			}else {
 				throw new ConsultaJaEncerradaException();
 			}

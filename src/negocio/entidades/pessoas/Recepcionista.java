@@ -2,6 +2,7 @@ package negocio.entidades.pessoas;
 
 import negocio.entidades.Animal;
 import negocio.entidades.Consulta;
+import negocio.excecoes.ConsultaNaoMarcadaException;
 import negocio.excecoes.FuncionarioNaoCadastradoException;
 
 import java.time.LocalDate;
@@ -32,14 +33,10 @@ public class Recepcionista extends Funcionario {
      * @param veterinario
      * @param paciente
      */
-    public boolean marcarConsulta(Veterinario veterinario, Animal paciente, LocalDate data){
-        if (veterinario.existeVaga(data)){
-            Consulta c = new Consulta(veterinario, paciente, data);
+    public void marcarConsulta(Veterinario veterinario, Animal paciente, LocalDate data){
+            Consulta c = new Consulta(veterinario, paciente,  data);
+            paciente.setConsulta(c);
             veterinario.preencherVaga(c);
-            return true;
-        }
-
-        return false;
     }
 
     /**
@@ -47,13 +44,10 @@ public class Recepcionista extends Funcionario {
      * @param funcionario
      * @param animal
      */
-    public boolean desmarcarConsulta(Veterinario funcionario, Animal animal, LocalDate data){
+    public void desmarcarConsulta(Veterinario funcionario, Animal animal, LocalDate data) throws ConsultaNaoMarcadaException {
         Consulta consulta = new Consulta(funcionario, animal, data);
+        animal.removerConsulta(consulta);
+        funcionario.desmarcar(consulta);
 
-        if (funcionario.getConsultasMarcadas().contains(consulta)){
-            funcionario.desmarcar(consulta);
-            return true;
-        }
-        return false;
     }
 }

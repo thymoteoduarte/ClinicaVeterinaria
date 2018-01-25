@@ -1,35 +1,40 @@
 package negocio.entidades;
 
 import negocio.entidades.pessoas.Veterinario;
-import negocio.excecoes.ConsultaJaEncerradaException;
 
 import java.time.LocalDate;
 
 public class Consulta {
-	Veterinario veterinario;
-	LocalDate data;
-	String historico;
-	boolean encerrado;
+	private Veterinario veterinario;
+	private LocalDate data;
+	private String historico;											//observacoes feitas pelo veterinario sobre a consulta (remedios passados, estado do paciente e etc.)
+	private Animal animal;
+	private boolean encerrado;
 
-	public Consulta(Veterinario veterinario, LocalDate data) {
+	public Consulta(Veterinario veterinario, Animal animal, LocalDate data) {
 		this.veterinario = veterinario;
 		this.data = data;
 		this.encerrado = false;
+		this.animal = animal;
 	}
 
 	public Veterinario getVeterinario() {
-		return veterinario;
+		return this.veterinario;
 	}
 
 	public LocalDate getData() {
-		return data;
+		return this.data;
 	}
 
-	//retorna as observações sobre o paciente adicionadas durante a consulta
+	public Animal getAnimal(){ return this.animal;};
+
 	public String getHistorico() {
-		return historico;
+		return this.historico;
 	}
 
+	public boolean getEncerrado() {
+		return this.encerrado;
+	}
 
 	public void setHistorico(String historico){
 		this.historico = historico;
@@ -39,7 +44,5 @@ public class Consulta {
 		this.encerrado = true;
 	}
 
-	public boolean getEncerrado() {
-		return this.encerrado;
-	}
+
 }
