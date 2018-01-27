@@ -2,6 +2,6 @@ package negocio.excecoes;
 
 public class ClienteJaCadastradoException extends Exception {
     public ClienteJaCadastradoException(){
-        super("O cadastro já existe !");
+        super("O cadastro ja existe !");
     }
 }

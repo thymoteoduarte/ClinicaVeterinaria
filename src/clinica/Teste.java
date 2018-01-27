@@ -27,6 +27,7 @@ public class Teste {
     	
     	try {
     		nrc.marcarConsulta(animal, vet, LocalDate.now());
+    		System.out.println(vet.getNome());
         	System.out.println(vet.getConsultasMarcadas().toString());
     	}catch(Exception ex) {
     		System.out.println("Erro!");

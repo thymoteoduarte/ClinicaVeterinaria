@@ -4,6 +4,6 @@ import gui.janelasMensagens.JanelaMensagem;
 
 public class AnimalNaoCadastradoException extends Exception {
     public AnimalNaoCadastradoException () {
-        super ("Animal não cadastrado !");
+        super ("Animal nao cadastrado !");
     }
 }
