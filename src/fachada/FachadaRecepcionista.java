@@ -1,9 +1,6 @@
 package fachada;
 
 import dados.clientes.RepositorioClientes;
-import gui.janelasCliente.JanelaCliente;
-import gui.janelasFuncionarios.JanelaConsultasMarcadas;
-import gui.janelasFuncionarios.JanelaRecepcionista;
 import negocio.NegocioCliente;
 import negocio.NegocioRecepcionista;
 import negocio.NegocioVeterinario;
@@ -28,82 +25,77 @@ public class FachadaRecepcionista {
     }
 
 
-
                                                                                                      //metodos para consulta de cadastros:
 
 
     //consulta toda a lista de clientes cadastrados no sistema
-    public void consultarListaClientes(){
+    public ArrayList<String> consultarListaClientes(){
         ArrayList<String> listaDeCliente = new ArrayList();
 
         for(Cliente cliente : this.cliente.getRepositorioClientes().getClientes())
-            listaDeCliente.add(cliente.getNome() + "          Data de Nascinmento: " + cliente.getDataNascimento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+            listaDeCliente.add(cliente.getNome() + "\tData de Nascinmento: " + cliente.getDataNascimento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
 
-        new JanelaRecepcionista().exibirListaClientes(listaDeCliente);
+        return listaDeCliente;
     }
 
     //consulta o cadatro de um cliente atravez de seu nome
-    public void consultarCadastroCliente(String nome, LocalDate data){
+    public String consultarCadastroCliente(String nome, LocalDate data){
         try{
             Cliente c = this.cliente.getCliente(nome, data);
-            JanelaCliente janelaCliente = new JanelaCliente();
-            janelaCliente.exibirInformacoes(c.toString());
+            return c.toString();
         }catch (ClienteNaoCadastradoException ex) {
             ex.exibir();
         }
+        return "";
     }
 
     //Exibe uma lista de animais do cliente
-    public void consultarListaAnimais (String nomeCliente, LocalDate data) {
+    public ArrayList<String> consultarListaAnimais (String nomeCliente, LocalDate data) {
         try{
             Cliente c = this.cliente.getCliente(nomeCliente, data);
             ArrayList<String> informacoes = new ArrayList();
-            JanelaCliente janelaCliente = new JanelaCliente();
 
             for(Animal animal : c.getListaAnimais()){
                 informacoes.add(animal.getNome());
             }
-
-            janelaCliente.exibirListaAnimais(c.getNome(),informacoes);
+            return informacoes;
         }catch (ClienteNaoCadastradoException ex) {
             ex.exibir();
         }
+        return null;
     }
 
     //Exibe informações de um unico animal do cliente
-    public void consultarAnimal(String nomeCliente, LocalDate dn, String nomeAnimal){
+    public String consultarCadastroAnimal(String nomeCliente, LocalDate dn, String nomeAnimal){
         try {
             Animal a = cliente.getAnimal(nomeCliente, dn, nomeAnimal);
-            JanelaCliente janelaCliente = new JanelaCliente();
-
-            janelaCliente.exibirInformacoes(nomeCliente, a.toString());
+            return a.toString();
 
         }catch (ClienteNaoCadastradoException ex){
             ex.exibir();
         } catch (AnimalNaoCadastradoException ex) {
             ex.exibir();
         }
+        return "";
     }
-
 
                                                                                                     //metodos para consulta de horarios
 
     //Consulta as consultas marcadas para um veterinario para um data especifica
-    public void consultarHorarios(String nomeVet, LocalDate data) {
+    public ArrayList<String> consultarHorarios(String nomeVet, LocalDate data) {
         try {
             Veterinario vet = this.veterinario.getVeterinario(nomeVet);
             ArrayList<String> listaDeConsultas = new ArrayList();
-            JanelaConsultasMarcadas janela = new JanelaConsultasMarcadas();
 
             for(Consulta consulta : vet.getConsultasMarcadas()){
                 if(consulta.getData().equals(data))
                     listaDeConsultas.add(consulta.toString());
             }
-
-            janela.exibir(listaDeConsultas);
+            return listaDeConsultas;
         }catch(VeterinarioNaoCadastradoExceptions ex){
             ex.exibir();
         }
+        return null;
     }
 
                                                                                                             //metodos de cadastros
@@ -121,18 +113,42 @@ public class FachadaRecepcionista {
 
     }
 
+    public void removerCliente(String nomeCliente, LocalDate dn){
+        try {
+            Cliente c = this.cliente.getCliente(nomeCliente, dn);
+            this.cliente.removerCliente(c);
+        } catch (ClienteNaoCadastradoException e) {
+            e.exibir();
+        }
+    }
+
     //Vincula um animal a um cliente já cadastrado no sistema
     public void cadastrarAnimal(String nomeCliente, LocalDate dn, String nomeAnimal, String sexo, String especie, String raca, LocalDate dnAnimal){
         try {
             Cliente c = cliente.getCliente(nomeCliente, dn);
-            Animal novo = new Animal(nomeAnimal, sexo, especie, raca, dnAnimal);
+            Animal novo = new Animal(nomeAnimal, sexo, especie, raca, dnAnimal, c);
 
-            cliente.cadastrarAnimal(c, novo);
+            this.cliente.cadastrarAnimal(c, novo);
+
         }catch (ClienteNaoCadastradoException ex) {
             ex.exibir();
         } catch (AnimalJaCadastradoException ex) {
             ex.exibir();
         }
+    }
+
+    //retira um animal do cadastro do cliente
+    public void removerAnimal(String nomeCliente, LocalDate dn, String nomeAnimal){
+        try {
+            Cliente c = this.cliente.getCliente(nomeCliente, dn);
+            Animal a = this.cliente.getAnimal(nomeCliente, dn, nomeAnimal);
+            this.cliente.removerAnimal(c, a);
+        } catch (ClienteNaoCadastradoException e) {
+            e.exibir();
+        } catch (AnimalNaoCadastradoException e) {
+            e.exibir();
+        }
+
     }
 
 
@@ -143,16 +159,16 @@ public class FachadaRecepcionista {
         try {
             Animal animal = this.cliente.getAnimal(nomeCliente, dn, nomeAnimmal);
             Veterinario vet = this.veterinario.getVeterinario(nomeVet);
-            Consulta consulta = new Consulta(vet, animal, data);
 
-            animal.setConsulta(consulta);
-            vet.preencherVaga(consulta);
-            //atualizar os repositorios
+            this.recepcionista.marcarConsulta(animal, vet,data);
+
         } catch (ClienteNaoCadastradoException e) {
             e.exibir();
         } catch (AnimalNaoCadastradoException e) {
             e.exibir();
         } catch (VeterinarioNaoCadastradoExceptions e) {
+            e.exibir();
+        } catch (ConsultaJaMarcadaException e) {
             e.exibir();
         }
     }
@@ -165,10 +181,8 @@ public class FachadaRecepcionista {
             Animal a = cliente.getAnimal(nomeCliente, dn, nomeAnimal);
             Consulta consulta = new Consulta(vet, a,data);
 
-            vet.desmarcar(consulta);
-            a.removerConsulta(consulta);
+            this.recepcionista.desmarcar(consulta,vet);
 
-            //atualizar os repositorios
         } catch (VeterinarioNaoCadastradoExceptions e) {
             e.exibir();
         } catch (ClienteNaoCadastradoException e) {
@@ -178,23 +192,5 @@ public class FachadaRecepcionista {
         } catch (ConsultaNaoMarcadaException e) {
             e.printStackTrace();
         }
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -27,23 +27,6 @@ public class Veterinario extends Funcionario {
     }
 
     /**
-     * @param data
-     * @return true se o numero de consultas marcadas na data que foi passada como parametro, for menor que o limite.
-     */
-    public boolean existeVaga(LocalDate data){
-        int marcadas = 0;
-        for(Consulta c : consultasMarcadas){
-            if (c.getData().equals(data))
-                marcadas++;
-        }
-        if (marcadas >= limite)
-            return false;
-
-        return true;
-    }
-
-
-    /**
      * Preenche uma vaga de consulta, adicionando uma consulta ao repositorio de consultas do Veterinario.
      * @param consulta
      */
@@ -67,16 +50,11 @@ public class Veterinario extends Funcionario {
      * Finaliza um consulta, adicionando ela ao repositorio de consultas do animal, e retirando do repositorio de consultas marcadas do veterinario.
      * @param consulta
      */
-    public void finalizarConsulta(Animal animal, Consulta consulta ,String obs) throws ConsultaJaEncerradaException{
-        if (!consulta.getEncerrado()) {
-            consulta.setHistorico(obs);
-            consulta.encerrar();
-            animal.setConsulta(consulta);
-            this.consultasMarcadas.remove(consulta);
-        }else{
-            throw new ConsultaJaEncerradaException();
-        }
-
+    public void finalizarConsulta(Animal animal, Consulta consulta ,String obs){
+        consulta.setHistorico(obs);
+        consulta.encerrar();
+        animal.setConsulta(consulta);
+        this.consultasMarcadas.remove(consulta);
     }
 
     /**

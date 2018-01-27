@@ -1,15 +1,13 @@
 package negocio;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import dados.funcionarios.RepositorioVeterinarios;
 import negocio.entidades.Animal;
 import negocio.entidades.Consulta;
 import negocio.entidades.pessoas.Veterinario;
-import negocio.excecoes.ConsultaJaEncerradaException;
-import negocio.excecoes.ConsultaNaoMarcadaException;
-import negocio.excecoes.LoginInvalidoException;
-import negocio.excecoes.VeterinarioNaoCadastradoExceptions;
+import negocio.excecoes.*;
 
 public class NegocioVeterinario {
 	private RepositorioVeterinarios lista;
@@ -33,14 +31,12 @@ public class NegocioVeterinario {
 
 	
 	//Encerra uma consulta marcada para a data atual, e adiciona as observações do veterinario no protuario do animal
-	public void encerrar (Veterinario vet, Animal animal, String obs )  throws ConsultaNaoMarcadaException, ConsultaJaEncerradaException{
-		Consulta consulta = new Consulta(vet, animal, LocalDate.now());
+	public void encerrar (Veterinario vet, Consulta consulta, String obs )  throws ConsultaNaoMarcadaException, ConsultaJaEncerradaException{
 		
-		if(vet.getConsultasMarcadas().contains(consulta)) {												//verifica se a consulta esta marcada
+		if(consulta.getData().equals(LocalDate.now()) && vet.getConsultasMarcadas().contains(consulta)) {												//verifica se a consulta esta marcada
 			if(!consulta.getEncerrado()) {																//verifica se ela ja está encarrada
-				consulta.setHistorico(obs);
-				consulta.encerrar();
-				animal.setConsulta(consulta);
+
+				vet.finalizarConsulta(consulta.getAnimal(), consulta, obs);
 				vet.getConsultasMarcadas().set(vet.getConsultasMarcadas().indexOf(consulta), consulta);
 			}else {
 				throw new ConsultaJaEncerradaException();
@@ -60,4 +56,19 @@ public class NegocioVeterinario {
 	    }
 	    throw new LoginInvalidoException();
 	}
+
+	public void atualizar(Veterinario vet) throws VeterinarioNaoCadastradoExceptions {
+		if(this.lista.getVeterinarios().contains(vet))
+			this.lista.atualizar(vet);
+		else
+			throw new VeterinarioNaoCadastradoExceptions();
+	}
+
+	public void addVeterinario(Veterinario novo) throws VeterinarioJaCadastradoException {
+		if(!this.lista.existe(novo))
+			this.lista.adicionar(novo);
+		else
+			throw new VeterinarioJaCadastradoException();
+	}
+
 }

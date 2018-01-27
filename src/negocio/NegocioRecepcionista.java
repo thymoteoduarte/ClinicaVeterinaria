@@ -11,6 +11,9 @@ import negocio.excecoes.ConsultaNaoMarcadaException;
 import negocio.excecoes.LoginInvalidoException;
 import negocio.entidades.Animal;
 import negocio.entidades.Consulta;
+import negocio.excecoes.RecepcionistaJaCadastradoException;
+
+import javax.print.attribute.AttributeSet;
 
 
 public class NegocioRecepcionista {
@@ -19,7 +22,9 @@ public class NegocioRecepcionista {
     public NegocioRecepcionista(RepositorioRecepcionistas lista){
         this.lista = lista;
     }
-    
+
+
+
     public Recepcionista login(String login, String senha) throws LoginInvalidoException{
     	for(Recepcionista recepcionista : lista.getRecepcionistas()) {
     		if(recepcionista.getLogin().equals(login) && recepcionista.getSenha().equals(senha)) {
@@ -35,7 +40,8 @@ public class NegocioRecepcionista {
     public void marcarConsulta(Animal animal, Veterinario veterinario, LocalDate data) throws ConsultaJaMarcadaException{
     	Consulta consulta = new Consulta(veterinario, animal, data);
     	if(!veterinario.getConsultasMarcadas().contains(consulta)) {
-        	veterinario.preencherVaga(consulta);	
+        	veterinario.preencherVaga(consulta);
+        	//atualizar os repositorios
     	}else {
     		throw new ConsultaJaMarcadaException();
     	}
@@ -45,28 +51,20 @@ public class NegocioRecepcionista {
     public void desmarcar(Consulta consulta, Veterinario veterinario) throws ConsultaNaoMarcadaException {  	
     	if(veterinario.getConsultasMarcadas().contains(consulta)) {
     		veterinario.desmarcar(consulta);
+    		//atualizar os repositorios
     	}else {
     		throw new ConsultaNaoMarcadaException();
     	}	
     }
-    
-    //retorna a lista de consultas marcadas para a data passada como parametro
-    public ArrayList<Consulta> getConsultas(LocalDate data, Veterinario veterinario){
-    	ArrayList<Consulta> listaDeConsultas = new ArrayList();
-    	
-    	for(Consulta c : veterinario.getConsultasMarcadas()) {
-    		if(c.getData().equals(data)) {
-    			listaDeConsultas.add(c);
-    		}
-    	}
-    	
-    	return listaDeConsultas;
+
+    public void addRecepcionista(Recepcionista novo) throws RecepcionistaJaCadastradoException {
+    	if(!this.lista.existe(novo)){
+    		this.lista.adicionar(novo);
+		}else
+			throw new RecepcionistaJaCadastradoException();
+	}
+
+    public RepositorioRecepcionistas getRecepcionistas() {
+        return lista;
     }
-    
-    
-    
-    
-    
-    
-    
 }

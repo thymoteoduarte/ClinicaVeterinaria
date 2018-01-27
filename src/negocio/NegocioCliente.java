@@ -72,20 +72,33 @@ public class NegocioCliente {
     //Verifica se existe algum animal com o nome passado como parametro que esteja vinculado ao cliente;
     //retorna o animal;
     public Animal getAnimal(String nomeCliente, LocalDate dn, String nomeAnimal) throws AnimalNaoCadastradoException, ClienteNaoCadastradoException {
-        if(this.repositorioClientes.exite(this.getCliente(nomeCliente, dn) )){
+        if(this.repositorioClientes.exite(this.getCliente(nomeCliente, dn) )) {
             Cliente c = this.getCliente(nomeCliente, dn);
-            for(Animal animal : c.getListaAnimais()){
-                if(animal.getNome().equals(nomeAnimal)){
-                    return animal;
-                }
+
+            Animal animal = c.getAnimal(nomeAnimal);
+            if(animal != null){
+                return animal;
+            }else{
+                throw new AnimalNaoCadastradoException();
             }
-            throw new AnimalNaoCadastradoException();
         } else
             throw new ClienteNaoCadastradoException();
     }
 
-
+    //retorna o repositorio de clientes
     public RepositorioClientes getRepositorioClientes() {
         return repositorioClientes;
+    }
+
+    public void atualizarAnimal(Cliente cliente, Animal animal) {
+        cliente.atualizarAnimal(animal);
+        this.repositorioClientes.atualizar(cliente);
+    }
+
+    public void removerCliente(Cliente c) throws ClienteNaoCadastradoException{
+        if(this.repositorioClientes.exite(c)){
+            this.repositorioClientes.remover(c);
+        }else
+            throw new ClienteNaoCadastradoException();
     }
 }
