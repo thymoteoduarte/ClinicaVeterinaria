@@ -6,4 +6,7 @@ public class AnimalNaoCadastradoException extends Exception {
     public AnimalNaoCadastradoException () {
         super ("Animal nao cadastrado !");
     }
+
+    public void exibir() {
+    }
 }

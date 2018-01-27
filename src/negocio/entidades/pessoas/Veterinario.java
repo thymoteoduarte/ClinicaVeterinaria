@@ -1,6 +1,9 @@
 package negocio.entidades.pessoas;
 
+import negocio.entidades.Animal;
 import negocio.entidades.Consulta;
+import negocio.excecoes.ConsultaJaEncerradaException;
+import negocio.excecoes.ConsultaNaoMarcadaException;
 import negocio.excecoes.FuncionarioNaoCadastradoException;
 
 import java.time.LocalDate;
@@ -24,23 +27,6 @@ public class Veterinario extends Funcionario {
     }
 
     /**
-     * @param data
-     * @return true se o numero de consultas marcadas na data que foi passada como parametro, for menor que o limite.
-     */
-    public boolean existeVaga(LocalDate data){
-        int marcadas = 0;
-        for(Consulta c : consultasMarcadas){
-            if (c.getData().equals(data))
-                marcadas++;
-        }
-        if (marcadas >= limite)
-            return false;
-
-        return true;
-    }
-
-
-    /**
      * Preenche uma vaga de consulta, adicionando uma consulta ao repositorio de consultas do Veterinario.
      * @param consulta
      */
@@ -52,25 +38,22 @@ public class Veterinario extends Funcionario {
      * Remove um consulta do repositorio de consultas marcadas.
      * @param consulta
      */
-    public void desmarcar(Consulta consulta){
-        this.consultasMarcadas.remove(consulta);
+    public void desmarcar(Consulta consulta) throws ConsultaNaoMarcadaException {
+        if(this.getConsultasMarcadas().contains(consulta))
+            this.consultasMarcadas.remove(consulta);
+        else
+            throw new ConsultaNaoMarcadaException();
     }
 
-    /**
-     * Insere uma observação na consulta do cliente.
-     * @param consulta
-     * @param observacao
-     */
-    public void setObs(Consulta consulta, String observacao){
-        consulta.setHistorico(observacao);
-    }
 
     /**
      * Finaliza um consulta, adicionando ela ao repositorio de consultas do animal, e retirando do repositorio de consultas marcadas do veterinario.
      * @param consulta
      */
-    public void finalizarConsulta(Consulta consulta){
+    public void finalizarConsulta(Animal animal, Consulta consulta ,String obs){
+        consulta.setHistorico(obs);
         consulta.encerrar();
+        animal.setConsulta(consulta);
         this.consultasMarcadas.remove(consulta);
     }
 

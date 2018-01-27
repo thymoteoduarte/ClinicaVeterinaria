@@ -1,6 +1,7 @@
 package negocio.entidades;
 
 import negocio.entidades.pessoas.Cliente;
+import negocio.excecoes.ConsultaNaoMarcadaException;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,19 +10,19 @@ public class Animal {
     private String nome, sexo, Especie, raca;
     private LocalDate dataNascimento;
     private ArrayList<Consulta> historico;
+    private Cliente dono;
 
                                                                                                             //Construtor de Animal
 
-    public Animal(String nome, String sexo, String especie, String raca, LocalDate dataNascimento) {
+    public Animal(String nome, String sexo, String especie, String raca, LocalDate dataNascimento, Cliente dono) {
         this.nome = nome;
         this.sexo = sexo;
         this.Especie = especie;
         this.raca = raca;
         this.dataNascimento = dataNascimento;
-        this.historico = new ArrayList<Consulta>();
+        this.historico = new ArrayList();
+        this.dono = dono;
     }
-
-
 
 
                                                                                                             //getters e setters
@@ -64,10 +65,22 @@ public class Animal {
         return this.dataNascimento;
     }
 
+    public Cliente getDono() {
+        return dono;
+    }
+
     public ArrayList<Consulta> getHistorico() {
         return this.historico;
     }
 
+
+    //usado na hora de desmarcar uma consulta
+    public void removerConsulta(Consulta consulta) throws ConsultaNaoMarcadaException {
+        if(this.historico.contains(consulta))
+            this.historico.remove(consulta);
+        else
+            throw new ConsultaNaoMarcadaException();
+    }
 
                                                                                                             //Sobreposição de metodos
     @Override

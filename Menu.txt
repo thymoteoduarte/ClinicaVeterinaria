@@ -1,25 +1,34 @@
+-------------------------- LOGIN  --------------------------------
+1)login
+2)novo cadastro
+obs.: O login deve detectar qal o tipo de usuario e mostrar o menu adequado.
+
 ---------------------- RECEPCIONISTA -----------------------------
 
 1) Cadastrar
-    1.1)Novo cliente.
-    1.2)Novo animal.
+    1.1)Novo cliente.                                           OK
+    1.2)Novo animal.                                            OK
 2) Marcacao
-    2.1)Nova consulta
-    2.2)Cancelar consulta
-    2.3)Remarcar consulta
+    2.1)Nova consulta                                           OK
+    2.2)Cancelar consulta                                       OK
 3) Consultar cadastros
-    3.1) Remover cadastro cliente
+    3.1) Remover cadastro cliente                               OK
     3.2) Remover cadastro animal                                OK
+    3.3) Consultar cadastro do animal                           OK
+    3.4) Consultar lista de animais de um cliente               OK
+    3.5) Consultar cadastro do cliente                          OK
+    3.6) Consultar lista de clientes cadastrados                OK
 4) Consultar horário
-    4.1) Veterinario
-    4.2) cliente
+    4.1) Veterinario                                            OK
 
 ------------------------- VETERIN�RIO -----------------------------
 
 1) Atender
-    1.1) Adicionar Observacao no prontuario do paciente
-    1.2) Finalizar consulta.
+    1.1) Finalizar (add as observações no prontuario).          OK
+    1.2) Consultar historico                                    OK
 2) Consultar agenda
+    1.1) Consultar o horario a partir de uma data.              OK
+    1.2) Consultar todas os agendamentos.                       OK
 3) Novo cadastro
-    3.1) Recepcionista
-    3.2) Veterinario
+    3.1) Recepcionista                                          OK
+    3.2) Veterinario                                            OK

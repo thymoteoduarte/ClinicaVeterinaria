@@ -5,49 +5,44 @@ import negocio.entidades.pessoas.Veterinario;
 import java.time.LocalDate;
 
 public class Consulta {
-	Veterinario veterinario;
-	Animal animal;
-	LocalDate data;
-	String historico;
-	boolean encerrado;
+	private Veterinario veterinario;
+	private LocalDate data;
+	private String historico;											//observacoes feitas pelo veterinario sobre a consulta (remedios passados, estado do paciente e etc.)
+	private Animal animal;
+	private boolean encerrado;
 
 	public Consulta(Veterinario veterinario, Animal animal, LocalDate data) {
 		this.veterinario = veterinario;
-		this.animal = animal;
 		this.data = data;
 		this.encerrado = false;
+		this.animal = animal;
 	}
 
 	public Veterinario getVeterinario() {
-		return veterinario;
-	}
-
-	public Animal getAnimal() {
-		return animal;
+		return this.veterinario;
 	}
 
 	public LocalDate getData() {
-		return data;
+		return this.data;
 	}
+
+	public Animal getAnimal(){ return this.animal;};
 
 	public String getHistorico() {
-		return historico;
+		return this.historico;
 	}
 
+	public boolean getEncerrado() {
+		return this.encerrado;
+	}
 
-	public boolean setHistorico(String historico) {
-		if(!this.encerrado){
-			this.historico = historico;
-			return true;
-		}
-		return false;                       //o historico só pode ser atualizado em uma consulta em andamento
+	public void setHistorico(String historico){
+		this.historico = historico;
 	}
 
 	public void encerrar(){
 		this.encerrado = true;
-		this.animal.setConsulta(this);
 	}
-	public boolean getEncerrado() {
-		return this.encerrado;
-	}
+
+
 }

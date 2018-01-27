@@ -1,6 +1,6 @@
 package negocio.excecoes;
 
-import gui.janelasMensagens.JanelaMensagem;
+import gui.JanelaMensagem;
 
 public class ClienteNaoCadastradoException extends Exception {
     public ClienteNaoCadastradoException (){
@@ -10,4 +10,5 @@ public class ClienteNaoCadastradoException extends Exception {
     public void exibir() {
         JanelaMensagem janela = new JanelaMensagem(this);
     }
+
 }

@@ -50,10 +50,13 @@ public class Cliente extends Pessoa {
      * Adiciona um animal na ListaDeAnimais de um Cliente
      */
     public void setAnimal(Animal novo){
-        if(!this.listaAnimais.contains(novo))
-            this.listaAnimais.add(novo);
+        this.listaAnimais.add(novo);
     }
 
+    //atualiza um animal
+    public void atualizarAnimal(Animal animal){
+        this.listaAnimais.set(this.listaAnimais.indexOf(animal), animal);
+    }
 
     /**
      * @param nome

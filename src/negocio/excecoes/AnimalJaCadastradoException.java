@@ -4,4 +4,7 @@ public class AnimalJaCadastradoException extends Exception {
     public AnimalJaCadastradoException(){
         super("Animal já está vinculado ao cliente !");
     }
+
+    public void exibir() {
+    }
 }
