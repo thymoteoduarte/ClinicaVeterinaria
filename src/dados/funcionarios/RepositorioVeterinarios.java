@@ -7,10 +7,14 @@ import java.util.ArrayList;
 public class RepositorioVeterinarios implements IRepositorioVeterinarios{
     private ArrayList<Veterinario> lista;
 
+    public RepositorioVeterinarios(){
+        this.lista = new ArrayList();
+    }
+    
 
     @Override
     public void adicionar(Veterinario veterinario){
-            this.lista.add((Veterinario) veterinario);
+            this.lista.add(veterinario);
     }
 
     @Override

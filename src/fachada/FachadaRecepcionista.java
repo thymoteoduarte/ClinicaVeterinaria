@@ -1,6 +1,8 @@
 package fachada;
 
 import dados.clientes.RepositorioClientes;
+import dados.funcionarios.RepositorioRecepcionistas;
+import dados.funcionarios.RepositorioVeterinarios;
 import negocio.NegocioCliente;
 import negocio.NegocioRecepcionista;
 import negocio.NegocioVeterinario;
@@ -22,10 +24,21 @@ public class FachadaRecepcionista {
 
     public FachadaRecepcionista() {
         this.cliente = new NegocioCliente(new RepositorioClientes());  //este repositorio pode ser carregado de um arquivo
+        this.veterinario = new NegocioVeterinario(new RepositorioVeterinarios());
+        this.recepcionista = new NegocioRecepcionista(new RepositorioRecepcionistas());
     }
+    
+    
+    public void login(String login, String senha) throws LoginInvalidoException{
+        this.recepcionista.login(login, senha);
+    }
+    
+
 
 
                                                                                                      //metodos para consulta de cadastros:
+
+
 
 
     //consulta toda a lista de clientes cadastrados no sistema

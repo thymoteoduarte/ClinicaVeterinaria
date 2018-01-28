@@ -13,26 +13,23 @@ import negocio.entidades.Animal;
 import negocio.entidades.Consulta;
 import negocio.excecoes.RecepcionistaJaCadastradoException;
 
-import javax.print.attribute.AttributeSet;
-
-
 public class NegocioRecepcionista {
     private RepositorioRecepcionistas lista;
 
     public NegocioRecepcionista(RepositorioRecepcionistas lista){
         this.lista = lista;
+        Recepcionista novo = new Recepcionista("recepcionista", "F", "11111111", LocalDate.now(), null, "456","456");
+        this.lista.adicionar(novo);
     }
 
 
 
-    public Recepcionista login(String login, String senha) throws LoginInvalidoException{
-    	for(Recepcionista recepcionista : lista.getRecepcionistas()) {
+    public boolean login(String login, String senha) throws LoginInvalidoException{
+    	for(Recepcionista recepcionista : this.lista.getRecepcionistas()) {
     		if(recepcionista.getLogin().equals(login) && recepcionista.getSenha().equals(senha)) {
-    			return recepcionista;
-    			
+    			return true;
     		}    		
     	}
-    	
     	throw new LoginInvalidoException();
     }
     

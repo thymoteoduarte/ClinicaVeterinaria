@@ -7,10 +7,14 @@ import java.util.ArrayList;
 public class RepositorioRecepcionistas implements IRepositorioRecepcionistas{
     private ArrayList<Recepcionista> lista;
 
+    public RepositorioRecepcionistas(){
+        this.lista = new ArrayList();
+    }
+    
 
     @Override
     public void adicionar(Recepcionista recepcionista){
-            this.lista.add( recepcionista);
+            this.lista.add(recepcionista);
     }
 
     @Override

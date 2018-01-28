@@ -27,6 +27,12 @@ public class FachadaVeterinario {
         this.cliente = new NegocioCliente(new RepositorioClientes());
         this.recepcionista = new NegocioRecepcionista(new RepositorioRecepcionistas());
     }
+    
+    
+    public void login(String login, String senha) throws LoginInvalidoException{
+       this.veterinario.login(login, senha);
+    }
+    
 
     public void cadastrarRecepcionista(String nome, String sexo, String fone, LocalDate dn, Endereco end, String login, String senha){
         Recepcionista novo = new Recepcionista(nome, sexo, fone, dn, end, login, senha);
