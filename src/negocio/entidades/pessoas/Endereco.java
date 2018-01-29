@@ -69,6 +69,9 @@ public class Endereco {
 
     @Override
     public String toString(){
-        return this.tipo + " " + this.nome + ", nº " + this.numero + ", " + this.bairro + ", CEP: " + this.cep;
+        if(!this.tipo.equals("") && !this.nome.equals("") && !this.numero.equals(""))
+            return this.tipo + " " + this.nome + ", nº " + this.numero + ", " + this.bairro + ", CEP: " + this.cep;
+        else
+            return "Endereco não cadastrado";
     }
 }

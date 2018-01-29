@@ -5,17 +5,24 @@
  */
 package gui.recepcionista;
 
+import fachada.FachadaRecepcionista;
+import gui.TelaMensagem;
+import negocio.excecoes.ClienteNaoCadastradoException;
+import negocio.excecoes.DataInvalidaException;
+import util.Datas;
+
 /**
  *
  * @author alvanirjunior
  */
 public class ConsultarCadastroCliente extends javax.swing.JFrame {
-
+    private FachadaRecepcionista recepcionista;
     /**
      * Creates new form ConsultarCadastroCliente
      */
-    public ConsultarCadastroCliente() {
+    public ConsultarCadastroCliente(FachadaRecepcionista recepcionista) {
         initComponents();
+        this.recepcionista = recepcionista;
     }
 
     /**
@@ -28,21 +35,23 @@ public class ConsultarCadastroCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         labelNomeClienteConsultarCadastroCliente = new javax.swing.JLabel();
-        textNomeClienteConsultarCadastroCliente = new javax.swing.JTextField();
+        jTnome = new javax.swing.JTextField();
         labelDataConsultarCadastroCliente = new javax.swing.JLabel();
-        textDataConsultarCadastroCliente = new javax.swing.JTextField();
+        jTdata = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         botaoConsultarCadastroCliente = new javax.swing.JButton();
+        botaoConsultarCadastroCliente1 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         labelNomeClienteConsultarCadastroCliente.setText("Nome do Cliente:");
 
-        labelDataConsultarCadastroCliente.setText("Data:");
+        labelDataConsultarCadastroCliente.setText("Data de nascimento:");
 
-        textDataConsultarCadastroCliente.addActionListener(new java.awt.event.ActionListener() {
+        jTdata.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textDataConsultarCadastroClienteActionPerformed(evt);
+                jTdataActionPerformed(evt);
             }
         });
 
@@ -50,32 +59,55 @@ public class ConsultarCadastroCliente extends javax.swing.JFrame {
         jLabel1.setText("Consultar Cadastro Cliente");
 
         botaoConsultarCadastroCliente.setText("Consultar Cadastro");
+        botaoConsultarCadastroCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoConsultarCadastroClienteActionPerformed(evt);
+            }
+        });
+
+        botaoConsultarCadastroCliente1.setText("Cancelar");
+        botaoConsultarCadastroCliente1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoConsultarCadastroCliente1ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Pesquisar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelDataConsultarCadastroCliente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textDataConsultarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelNomeClienteConsultarCadastroCliente)
-                        .addGap(18, 18, 18)
-                        .addComponent(textNomeClienteConsultarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(99, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(87, 87, 87))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(87, 87, 87))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelNomeClienteConsultarCadastroCliente)
+                            .addComponent(labelDataConsultarCadastroCliente))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTdata, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1))
+                            .addComponent(jTnome, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 9, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(124, 124, 124)
                         .addComponent(botaoConsultarCadastroCliente)
-                        .addGap(37, 37, 37))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botaoConsultarCadastroCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,64 +117,58 @@ public class ConsultarCadastroCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNomeClienteConsultarCadastroCliente)
-                    .addComponent(textNomeClienteConsultarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDataConsultarCadastroCliente)
-                    .addComponent(textDataConsultarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
-                .addComponent(botaoConsultarCadastroCliente)
-                .addGap(37, 37, 37))
+                    .addComponent(jTdata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoConsultarCadastroCliente)
+                    .addComponent(botaoConsultarCadastroCliente1))
+                .addGap(16, 16, 16))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textDataConsultarCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textDataConsultarCadastroClienteActionPerformed
+    private void jTdataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTdataActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textDataConsultarCadastroClienteActionPerformed
+    }//GEN-LAST:event_jTdataActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+    private void botaoConsultarCadastroCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConsultarCadastroCliente1ActionPerformed
+        MenuRecepcionista menu = new MenuRecepcionista(recepcionista);
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_botaoConsultarCadastroCliente1ActionPerformed
+
+    private void botaoConsultarCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConsultarCadastroClienteActionPerformed
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ConsultarCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ConsultarCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ConsultarCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ConsultarCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            String s = this.recepcionista.consultarCadastroCliente(this.jTnome.getText(), Datas.getData(jTdata.getText()));
+            InformacoesCliente janela = new InformacoesCliente(this.recepcionista, this.jTnome.getText(), this.jTdata.getText(), s);
+            janela.setVisible(true);
+            this.dispose();
+        } catch (DataInvalidaException | ClienteNaoCadastradoException ex) {
+            TelaMensagem tela = new TelaMensagem(ex.getMessage());
         }
-        //</editor-fold>
+    }//GEN-LAST:event_botaoConsultarCadastroClienteActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ConsultarCadastroCliente().setVisible(true);
-            }
-        });
-    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ListaClientes tela = new ListaClientes(recepcionista);
+        tela.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoConsultarCadastroCliente;
+    private javax.swing.JButton botaoConsultarCadastroCliente1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTdata;
+    private javax.swing.JTextField jTnome;
     private javax.swing.JLabel labelDataConsultarCadastroCliente;
     private javax.swing.JLabel labelNomeClienteConsultarCadastroCliente;
-    private javax.swing.JTextField textDataConsultarCadastroCliente;
-    private javax.swing.JTextField textNomeClienteConsultarCadastroCliente;
     // End of variables declaration//GEN-END:variables
 }

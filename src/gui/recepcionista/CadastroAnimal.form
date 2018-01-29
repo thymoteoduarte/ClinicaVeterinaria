@@ -23,53 +23,70 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="labelNomeCadastroAnimalA" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="textNomeCadastroAnimalA" min="-2" pref="304" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="labelDataCadastroAnimalA" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelEspecieCadastroAnimal" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelRacaAnimal" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="textRacaAnimal" min="-2" pref="120" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="textEspecieCadastroAnimal" min="-2" pref="178" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Component id="textDataCadastroAnimalA" min="-2" pref="80" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="labelSexoCadastroAnimalA" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="checkboxMCadastroAnimal" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                          <Component id="checkboxFCadastroAnimal" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="28" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="botaoCadastrarAnimal" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="botaoCadastrarAnimal1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jTdnDono" min="-2" pref="80" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jTnomeDono" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="labelNomeCadastroAnimalA" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                  <Component id="jTnome" min="-2" pref="141" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="labelSexoCadastroAnimalA" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="labelDataCadastroAnimalA" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTdn" min="-2" pref="80" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="labelEspecieCadastroAnimal" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelRacaAnimal" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="64" pref="64" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jTraca" pref="120" max="32767" attributes="0"/>
+                                      <Component id="jTespecie" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="cBfemea" min="-2" max="-2" attributes="0"/>
+                              <Component id="cBmacho" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -78,30 +95,46 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelNomeCadastroAnimalA" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textNomeCadastroAnimalA" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelDataCadastroAnimalA" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textDataCadastroAnimalA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTnome" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelSexoCadastroAnimalA" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxMCadastroAnimal" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxFCadastroAnimal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cBmacho" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labelDataCadastroAnimalA" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTdn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="cBfemea" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jTespecie" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelEspecieCadastroAnimal" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textEspecieCadastroAnimal" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="labelRacaAnimal" min="-2" max="-2" attributes="0"/>
-                  <Component id="textRacaAnimal" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTraca" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="87" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jTnomeDono" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTdnDono" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="20" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="botaoCadastrarAnimal" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="botaoCadastrarAnimal1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -125,9 +158,9 @@
         <Property name="text" type="java.lang.String" value="Ra&#xe7;a:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="textRacaAnimal">
+    <Component class="javax.swing.JTextField" name="jTraca">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textRacaAnimalActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTracaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="labelNomeCadastroAnimalA">
@@ -135,27 +168,27 @@
         <Property name="text" type="java.lang.String" value="Nome do Animal:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="textNomeCadastroAnimalA">
+    <Component class="javax.swing.JTextField" name="jTnome">
     </Component>
     <Component class="javax.swing.JLabel" name="labelSexoCadastroAnimalA">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sexo:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="checkboxMCadastroAnimal">
+    <Component class="javax.swing.JCheckBox" name="cBmacho">
       <Properties>
         <Property name="text" type="java.lang.String" value="Macho"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkboxMCadastroAnimalActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cBmachoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="checkboxFCadastroAnimal">
+    <Component class="javax.swing.JCheckBox" name="cBfemea">
       <Properties>
         <Property name="text" type="java.lang.String" value="F&#xea;mea"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkboxFCadastroAnimalActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cBfemeaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="labelEspecieCadastroAnimal">
@@ -163,14 +196,14 @@
         <Property name="text" type="java.lang.String" value="Especie:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="textEspecieCadastroAnimal">
+    <Component class="javax.swing.JTextField" name="jTespecie">
     </Component>
     <Component class="javax.swing.JLabel" name="labelDataCadastroAnimalA">
       <Properties>
         <Property name="text" type="java.lang.String" value="Data de Nascimento:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="textDataCadastroAnimalA">
+    <Component class="javax.swing.JTextField" name="jTdn">
     </Component>
     <Component class="javax.swing.JButton" name="botaoCadastrarAnimal">
       <Properties>
@@ -184,6 +217,28 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCadastrarAnimal1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dono:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nome:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Data de nascimento:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTdnDono">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTnomeDono">
     </Component>
   </SubComponents>
 </Form>

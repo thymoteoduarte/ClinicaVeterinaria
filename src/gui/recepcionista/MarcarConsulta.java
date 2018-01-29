@@ -5,17 +5,20 @@
  */
 package gui.recepcionista;
 
+import fachada.FachadaRecepcionista;
+
 /**
  *
  * @author alvanirjunior
  */
 public class MarcarConsulta extends javax.swing.JFrame {
-
+    private FachadaRecepcionista recepcionista;
     /**
      * Creates new form MarcarConsulta
      */
-    public MarcarConsulta() {
+    public MarcarConsulta(FachadaRecepcionista recepcionista) {
         initComponents();
+        this.recepcionista = recepcionista;
     }
 
     /**
@@ -39,6 +42,7 @@ public class MarcarConsulta extends javax.swing.JFrame {
         labelDataNcAnimalAgendarConsultas = new javax.swing.JLabel();
         TextDataNcAnimalAgendarconsultas = new javax.swing.JTextField();
         botaoAgendarConsulta = new javax.swing.JButton();
+        botaoAgendarConsulta1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
@@ -60,12 +64,19 @@ public class MarcarConsulta extends javax.swing.JFrame {
             }
         });
 
-        labelDataNcAnimalAgendarConsultas.setText("Data de Nascimento do Animal:");
+        labelDataNcAnimalAgendarConsultas.setText("Data da Consulta:");
 
-        botaoAgendarConsulta.setText("Agendar Consulta");
+        botaoAgendarConsulta.setText("Agendar");
         botaoAgendarConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAgendarConsultaActionPerformed(evt);
+            }
+        });
+
+        botaoAgendarConsulta1.setText("Cancelar");
+        botaoAgendarConsulta1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoAgendarConsulta1ActionPerformed(evt);
             }
         });
 
@@ -76,38 +87,42 @@ public class MarcarConsulta extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(127, 127, 127)
-                                .addComponent(jLabel1))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelNomeVetAgendarConsultas)
+                                    .addComponent(labelNomeClienteAgendarConsultas))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textNomeClienteAgendarConsultas)
+                                    .addComponent(textNomeVetAgendarConsultas)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(labelNomeAnimalAgendarConsultas)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(textNomeAnimalAgendarConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(labeldataNascClienteAgendarConsultas)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(textDataNcClienteAgendarConsultas))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(labelNomeClienteAgendarConsultas)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(textNomeClienteAgendarConsultas))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(labelNomeVetAgendarConsultas)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(textNomeVetAgendarConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(labelDataNcAnimalAgendarConsultas)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TextDataNcAnimalAgendarconsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 38, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(botaoAgendarConsulta)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                    .addComponent(labelDataNcAnimalAgendarConsultas)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(TextDataNcAnimalAgendarconsultas))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(labeldataNascClienteAgendarConsultas)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(textDataNcClienteAgendarConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(labelNomeAnimalAgendarConsultas)
+                                                .addGap(24, 24, 24)
+                                                .addComponent(textNomeAnimalAgendarConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(botaoAgendarConsulta)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(botaoAgendarConsulta1)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -127,16 +142,19 @@ public class MarcarConsulta extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labeldataNascClienteAgendarConsultas)
                     .addComponent(textDataNcClienteAgendarConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNomeAnimalAgendarConsultas)
                     .addComponent(textNomeAnimalAgendarConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDataNcAnimalAgendarConsultas)
                     .addComponent(TextDataNcAnimalAgendarconsultas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(botaoAgendarConsulta))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoAgendarConsulta)
+                    .addComponent(botaoAgendarConsulta1))
+                .addContainerGap())
         );
 
         pack();
@@ -150,44 +168,16 @@ public class MarcarConsulta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textNomeAnimalAgendarConsultasActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MarcarConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MarcarConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MarcarConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MarcarConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MarcarConsulta().setVisible(true);
-            }
-        });
-    }
+    private void botaoAgendarConsulta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAgendarConsulta1ActionPerformed
+        MenuRecepcionista menu = new MenuRecepcionista(recepcionista);
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_botaoAgendarConsulta1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField TextDataNcAnimalAgendarconsultas;
     private javax.swing.JButton botaoAgendarConsulta;
+    private javax.swing.JButton botaoAgendarConsulta1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelDataNcAnimalAgendarConsultas;
     private javax.swing.JLabel labelNomeAnimalAgendarConsultas;

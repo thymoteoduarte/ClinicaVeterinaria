@@ -5,16 +5,27 @@
  */
 package gui.recepcionista;
 
+import fachada.FachadaRecepcionista;
+import gui.TelaMensagem;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import negocio.excecoes.AnimalJaCadastradoException;
+import negocio.excecoes.ClienteNaoCadastradoException;
+import negocio.excecoes.DataInvalidaException;
+import util.Datas;
+
 /**
  *
  * @author alvanirjunior
  */
 public class CadastroAnimal extends javax.swing.JFrame {
+    private FachadaRecepcionista recepcionista;
 
     /**
      * Creates new form CadastroAnimal
      */
-    public CadastroAnimal() {
+    public CadastroAnimal(FachadaRecepcionista rec) {
+        this.recepcionista = rec;
         initComponents();
     }
 
@@ -29,18 +40,23 @@ public class CadastroAnimal extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         labelRacaAnimal = new javax.swing.JLabel();
-        textRacaAnimal = new javax.swing.JTextField();
+        jTraca = new javax.swing.JTextField();
         labelNomeCadastroAnimalA = new javax.swing.JLabel();
-        textNomeCadastroAnimalA = new javax.swing.JTextField();
+        jTnome = new javax.swing.JTextField();
         labelSexoCadastroAnimalA = new javax.swing.JLabel();
-        checkboxMCadastroAnimal = new javax.swing.JCheckBox();
-        checkboxFCadastroAnimal = new javax.swing.JCheckBox();
+        cBmacho = new javax.swing.JCheckBox();
+        cBfemea = new javax.swing.JCheckBox();
         labelEspecieCadastroAnimal = new javax.swing.JLabel();
-        textEspecieCadastroAnimal = new javax.swing.JTextField();
+        jTespecie = new javax.swing.JTextField();
         labelDataCadastroAnimalA = new javax.swing.JLabel();
-        textDataCadastroAnimalA = new javax.swing.JTextField();
+        jTdn = new javax.swing.JTextField();
         botaoCadastrarAnimal = new javax.swing.JButton();
         botaoCadastrarAnimal1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTdnDono = new javax.swing.JTextField();
+        jTnomeDono = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,9 +65,9 @@ public class CadastroAnimal extends javax.swing.JFrame {
 
         labelRacaAnimal.setText("Raça:");
 
-        textRacaAnimal.addActionListener(new java.awt.event.ActionListener() {
+        jTraca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textRacaAnimalActionPerformed(evt);
+                jTracaActionPerformed(evt);
             }
         });
 
@@ -59,17 +75,17 @@ public class CadastroAnimal extends javax.swing.JFrame {
 
         labelSexoCadastroAnimalA.setText("Sexo:");
 
-        checkboxMCadastroAnimal.setText("Macho");
-        checkboxMCadastroAnimal.addActionListener(new java.awt.event.ActionListener() {
+        cBmacho.setText("Macho");
+        cBmacho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkboxMCadastroAnimalActionPerformed(evt);
+                cBmachoActionPerformed(evt);
             }
         });
 
-        checkboxFCadastroAnimal.setText("Fêmea");
-        checkboxFCadastroAnimal.addActionListener(new java.awt.event.ActionListener() {
+        cBfemea.setText("Fêmea");
+        cBfemea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkboxFCadastroAnimalActionPerformed(evt);
+                cBfemeaActionPerformed(evt);
             }
         });
 
@@ -85,73 +101,108 @@ public class CadastroAnimal extends javax.swing.JFrame {
         });
 
         botaoCadastrarAnimal1.setText("Cancelar");
+        botaoCadastrarAnimal1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCadastrarAnimal1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Dono:");
+
+        jLabel3.setText("Nome:");
+
+        jLabel4.setText("Data de nascimento:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelNomeCadastroAnimalA)
-                                .addGap(24, 24, 24)
-                                .addComponent(textNomeCadastroAnimalA, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelDataCadastroAnimalA)
-                                    .addComponent(labelEspecieCadastroAnimal)
-                                    .addComponent(labelRacaAnimal))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textRacaAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(textEspecieCadastroAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(textDataCadastroAnimalA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(labelSexoCadastroAnimalA)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(checkboxMCadastroAnimal)
-                                            .addGap(31, 31, 31)
-                                            .addComponent(checkboxFCadastroAnimal)))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(145, 145, 145)
-                                .addComponent(jLabel1)))
-                        .addContainerGap(28, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(botaoCadastrarAnimal)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoCadastrarAnimal1)
-                        .addGap(20, 20, 20))))
+                        .addComponent(botaoCadastrarAnimal1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTdnDono, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jTnomeDono)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(145, 145, 145)
+                            .addComponent(jLabel1))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(labelNomeCadastroAnimalA)
+                                    .addGap(24, 24, 24)
+                                    .addComponent(jTnome, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(labelSexoCadastroAnimalA))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(labelDataCadastroAnimalA)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jTdn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(labelEspecieCadastroAnimal)
+                                        .addComponent(labelRacaAnimal))
+                                    .addGap(64, 64, 64)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jTraca, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                        .addComponent(jTespecie))))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cBfemea)
+                                .addComponent(cBmacho)))))
+                .addGap(29, 29, 29))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(10, 10, 10)
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNomeCadastroAnimalA)
-                    .addComponent(textNomeCadastroAnimalA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelDataCadastroAnimalA)
-                    .addComponent(textDataCadastroAnimalA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelSexoCadastroAnimalA)
-                    .addComponent(checkboxMCadastroAnimal)
-                    .addComponent(checkboxFCadastroAnimal))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(cBmacho))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(labelDataCadastroAnimalA)
+                        .addComponent(jTdn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cBfemea))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelEspecieCadastroAnimal)
-                    .addComponent(textEspecieCadastroAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTespecie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelEspecieCadastroAnimal))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelRacaAnimal)
-                    .addComponent(textRacaAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                    .addComponent(jTraca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel3))
+                    .addComponent(jTnomeDono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4)
+                    .addComponent(jTdnDono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoCadastrarAnimal)
                     .addComponent(botaoCadastrarAnimal1))
@@ -161,71 +212,71 @@ public class CadastroAnimal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textRacaAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textRacaAnimalActionPerformed
+    private void jTracaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTracaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textRacaAnimalActionPerformed
+    }//GEN-LAST:event_jTracaActionPerformed
 
-    private void checkboxMCadastroAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkboxMCadastroAnimalActionPerformed
+    private void cBmachoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBmachoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_checkboxMCadastroAnimalActionPerformed
+    }//GEN-LAST:event_cBmachoActionPerformed
 
-    private void checkboxFCadastroAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkboxFCadastroAnimalActionPerformed
+    private void cBfemeaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBfemeaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_checkboxFCadastroAnimalActionPerformed
+    }//GEN-LAST:event_cBfemeaActionPerformed
 
     private void botaoCadastrarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarAnimalActionPerformed
-        
+        String sexo = "";
+
+        if (this.cBfemea.isSelected()) {
+            sexo = "Femea";
+        } else if (this.cBmacho.isSelected()) {
+            sexo = "Macho";
+        }
+        if (!this.jTnome.getText().equals("") && !this.jTnomeDono.equals("") && !this.jTraca.getText().equals("") && !this.jTespecie.equals("")) {
+            if (!sexo.equals("")) {
+                try {
+                    this.recepcionista.cadastrarAnimal(this.jTnomeDono.getText(), Datas.getData(this.jTdnDono.getText()), jTnome.getText(), sexo, jTespecie.getText(), jTraca.getText(), Datas.getData(jTdn.getText()));
+                    MenuRecepcionista tela = new MenuRecepcionista(recepcionista);
+                    tela.setVisible(true);
+                    this.dispose();                    
+                    new TelaMensagem("Cadastro efetuado").setVisible(true);
+                } catch (DataInvalidaException | ClienteNaoCadastradoException | AnimalJaCadastradoException ex) {
+                    new TelaMensagem(ex.getMessage()).setVisible(true);
+                }
+            } else {
+                new TelaMensagem("Selecione o sexo!").setVisible(true);
+            }
+
+        }else
+            new TelaMensagem("Preencha todos os campos").setVisible(true);
+
     }//GEN-LAST:event_botaoCadastrarAnimalActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CadastroAnimal().setVisible(true);
-            }
-        });
-    }
+    private void botaoCadastrarAnimal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarAnimal1ActionPerformed
+        MenuRecepcionista tela = new MenuRecepcionista(recepcionista);
+        tela.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_botaoCadastrarAnimal1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoCadastrarAnimal;
     private javax.swing.JButton botaoCadastrarAnimal1;
-    private javax.swing.JCheckBox checkboxFCadastroAnimal;
-    private javax.swing.JCheckBox checkboxMCadastroAnimal;
+    private javax.swing.JCheckBox cBfemea;
+    private javax.swing.JCheckBox cBmacho;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JTextField jTdn;
+    private javax.swing.JTextField jTdnDono;
+    private javax.swing.JTextField jTespecie;
+    private javax.swing.JTextField jTnome;
+    private javax.swing.JTextField jTnomeDono;
+    private javax.swing.JTextField jTraca;
     private javax.swing.JLabel labelDataCadastroAnimalA;
     private javax.swing.JLabel labelEspecieCadastroAnimal;
     private javax.swing.JLabel labelNomeCadastroAnimalA;
     private javax.swing.JLabel labelRacaAnimal;
     private javax.swing.JLabel labelSexoCadastroAnimalA;
-    private javax.swing.JTextField textDataCadastroAnimalA;
-    private javax.swing.JTextField textEspecieCadastroAnimal;
-    private javax.swing.JTextField textNomeCadastroAnimalA;
-    private javax.swing.JTextField textRacaAnimal;
     // End of variables declaration//GEN-END:variables
 }

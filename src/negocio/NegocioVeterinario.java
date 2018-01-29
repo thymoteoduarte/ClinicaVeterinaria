@@ -21,10 +21,10 @@ public class NegocioVeterinario {
         
         
         //faz o login do veterinario no sistema
-	public boolean login(String login, String senha) throws LoginInvalidoException{
+	public Veterinario login(String login, String senha) throws LoginInvalidoException{
             for(Veterinario veterinario : this.lista.getVeterinarios()) {
 	    	if(veterinario.getLogin().equals(login) && veterinario.getSenha().equals(senha)) {
-	    		return true;
+	    		return veterinario;
 	    	}
 	    }
 	    throw new LoginInvalidoException();

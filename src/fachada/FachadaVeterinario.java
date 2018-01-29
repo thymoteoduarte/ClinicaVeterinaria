@@ -1,5 +1,6 @@
 package fachada;
 
+import negocio.excecoes.VeterinarioNaoLogadoException;
 import dados.clientes.RepositorioClientes;
 import dados.funcionarios.RepositorioRecepcionistas;
 import dados.funcionarios.RepositorioVeterinarios;
@@ -21,6 +22,7 @@ public class FachadaVeterinario {
     private NegocioVeterinario veterinario;
     private NegocioCliente cliente;
     private NegocioRecepcionista recepcionista;
+    private Veterinario vet;
 
     public FachadaVeterinario(){
         this.veterinario = new NegocioVeterinario(new RepositorioVeterinarios());
@@ -30,7 +32,7 @@ public class FachadaVeterinario {
     
     
     public void login(String login, String senha) throws LoginInvalidoException{
-       this.veterinario.login(login, senha);
+       this.vet = this.veterinario.login(login, senha);
     }
     
 
@@ -128,4 +130,11 @@ public class FachadaVeterinario {
         }
         return null;
     }
+
+    
+    public String getNomeVet() throws VeterinarioNaoLogadoException{
+        if (this.vet != null)
+            return this.vet.getNome();
+        throw new VeterinarioNaoLogadoException();
+    }    
 }

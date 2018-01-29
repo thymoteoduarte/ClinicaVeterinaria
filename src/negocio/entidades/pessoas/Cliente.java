@@ -87,9 +87,9 @@ public class Cliente extends Pessoa {
     @Override
     public String toString() {
         return "Nome: " + this.getNome() +
-                "Sexo: " + this.getSexo() +
-                "Fone: " + this.getTelefone() +
-                "Data de nascimento: " + this.getDataNascimento().toString() +
-                "Endereço: " + this.getEndereco().toString();
+                "\nSexo: " + this.getSexo() +
+                "\nFone: " + this.getTelefone() +
+                "\nData de nascimento: " + this.getDataNascimento().toString() +
+                "\nEndereço: " + this.getEndereco().toString();
     }
 }
